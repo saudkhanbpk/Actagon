@@ -1,7 +1,16 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
-
+import Logo from './components/Logo/Logo'
+import Signup from './components/Signup/Signup'
 function App() {
-  return <h1 className="text-3xl font-bold underline text-green-500">Hello world!</h1>;
+  return <div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Logo />}/>
+        <Route path="/signup" element={<Signup />}/>
+      </Routes>
+    </BrowserRouter>
+  </div>;
 }
 
 export default App;
