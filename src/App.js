@@ -21,6 +21,7 @@ import ProfileView from "./components/profileView/ProfileView";
 function App() {
   return <div>
     <BrowserRouter>
+      {/* <BottomNavigation /> */}
       <Routes>
         <Route path="/" element={<Logo />} />
         <Route path="/signup" element={<Signup />} />
