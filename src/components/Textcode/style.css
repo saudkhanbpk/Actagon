@@ -1,0 +1,6 @@
+/* Define a custom class for styling the placeholder text */
+.custom-placeholder-style::placeholder {
+    font-size: 2.5rem; /* Adjust the size as needed */
+    opacity: 0.5; /* Optional: Adjust the opacity of the placeholder */
+  }
+  
