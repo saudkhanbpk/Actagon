@@ -9,8 +9,8 @@ const LoginCode = () => {
         <h2 className="text-center text-[#000] text-xl font-[20px] mb-11">
         We will send your login code
         </h2>
-
-        {/* OTP Input */}
+{/* gvhkjlknm; */}
+        
         <div className="mb-3 border-none ">
           
         </div>
@@ -21,7 +21,6 @@ const LoginCode = () => {
           
         </div>
 
-        {/* Button */}
         <div className="mt-24">
         <Link to='/emailedcode'>
           <button
