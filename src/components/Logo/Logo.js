@@ -13,9 +13,11 @@ const Logo = () => {
           Sign up
         </button>
        </Link>
+        <Link to='/phone'>
         <button className="w-full text-blue-500 font-bold py-2 px-4 rounded">
           Log in
         </button>
+        </Link>
       </div>
     </div>
   )
