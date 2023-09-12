@@ -6,15 +6,20 @@ import Phonelogin from "./components/Phonelogin/Phonelogin";
 import Textcode from "./components/Textcode/Textcode";
 import Signup from './components/Signup-for-number/Signup'
 import SignupCode from "./components/Signup-cod-number/Signup";
+import ChangeUserName from "./components/ChangeUserName/ChangeUserName";
+import Profile from "./components/profile/Profile";
 function App() {
   return <div>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Logo />}/>
-        <Route path="/signup" element={<Signup />}/>
-        <Route path="/phone" element={<Phonelogin />}/>
-        <Route path="/text" element={<Textcode />}/>
-        <Route path="/signup-code" element={<SignupCode />}/>
+        <Route path="/" element={<Logo />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/phone" element={<Phonelogin />} />
+        <Route path="/text" element={<Textcode />} />
+        <Route path="/signup-code" element={<SignupCode />} />
+        <Route path="/changeUserName" element={<ChangeUserName />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="*" element={<h1>Not Found</h1>} />
 
       </Routes>
     </BrowserRouter>
