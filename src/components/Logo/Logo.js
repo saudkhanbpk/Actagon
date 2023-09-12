@@ -8,14 +8,16 @@ const Logo = () => {
         LOGO
       </div>
       <div className="w-full max-w-md px-3 mb-10">
-       <Link to='/signup'>
-       <button className="w-full font-sf bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md mb-4">
-          Sign up
-        </button>
-       </Link>
-        <button className="w-full text-blue-500 font-bold py-2 px-4 rounded">
-          Log in
-        </button>
+        <Link to='/signup'>
+          <button className="w-full font-sf bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md mb-4">
+            Sign up
+          </button>
+        </Link>
+        <Link to='/phone'>
+          <button className="w-full text-blue-500 font-bold py-2 px-4 rounded">
+            Log in
+          </button>
+        </Link>
       </div>
     </div>
   )
