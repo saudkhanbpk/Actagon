@@ -4,7 +4,10 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
+    // fontFamily: {
+    //   'sf': ['SF Pro']
+    // },
     extend: {},
   },
   plugins: [],
-}
+} 
