@@ -1,6 +1,7 @@
 import React from "react";
 import "react-phone-input-2/lib/style.css"; // Import the library's CSS
 import PhoneInput from "react-phone-input-2";
+import { Link } from "react-router-dom";
 
 function Phonelogin() {
   return (
@@ -28,12 +29,14 @@ function Phonelogin() {
 
         {/* Button */}
         <div className="mt-44">
-          <button
+         <Link to='/text'>
+         <button
             className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg focus:outline-none focus:shadow-outline-blue transition duration-300 ease-in-out"
             type="submit"
           >
             NEXT
           </button>
+         </Link>
         </div>
       </div>
     </div>
