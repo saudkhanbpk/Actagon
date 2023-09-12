@@ -32,7 +32,7 @@ function Phonelogin() {
         <div className="mt-28">
         <Link to='/text'>
           <button
-            className="w-full h-[45px] bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg focus:outline-none focus:shadow-outline-blue transition duration-300 ease-in-out"
+            className="w-full h-[45px] bg-blueButtonColor hover:bg-blue-600 text-[white] font-bold py-2 px-4 rounded-lg focus:outline-none focus:shadow-outline-blue transition duration-300 ease-in-out"
             type="submit"
           >
             NEXT
