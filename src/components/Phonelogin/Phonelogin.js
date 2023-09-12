@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 
 function Phonelogin() {
   return (
-    <div className=" min-h-screen flex justify-center items-center mt-12">
-      <div className=" p-4  rounded-lg w-full max-w-md">
+    <div className=" min-h-screen flex justify-center items-center">
+      <div className=" p-4 rounded-lg w-full max-w-md">
         {/* Heading */}
         <h2 className="text-center text-2xl font-[20px] mb-8">
           Welcome back <br />
@@ -14,7 +14,7 @@ function Phonelogin() {
         </h2>
 
         {/* Phone Input */}
-        <div className="mb-4 border-none">
+        <div className="mb-4 border-none mt-6">
           {" "}
           <PhoneInput
             inputProps={{
@@ -28,15 +28,16 @@ function Phonelogin() {
         </div>
 
         {/* Button */}
-        <div className="mt-44">
-         <Link to='/text'>
-         <button
-            className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg focus:outline-none focus:shadow-outline-blue transition duration-300 ease-in-out"
+        
+        <div className="mt-28">
+        <Link to='/text'>
+          <button
+            className="w-full h-[45px] bg-blueButtonColor hover:bg-blue-600 text-[white] font-bold py-2 px-4 rounded-lg focus:outline-none focus:shadow-outline-blue transition duration-300 ease-in-out"
             type="submit"
           >
             NEXT
           </button>
-         </Link>
+          </Link>
         </div>
       </div>
     </div>
