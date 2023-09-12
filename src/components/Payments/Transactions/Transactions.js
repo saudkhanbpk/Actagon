@@ -7,6 +7,7 @@ import { FiArrowUpRight } from 'react-icons/fi'
 import { IoIosArrowForward } from 'react-icons/io'
 function Transition() {
     return (
+        // cutvihbjnk
         <div className="max-w-sm px-3 mx-auto bg-[#F2F2F6] shadow-lg rounded-lg overflow-hidden">
             <img src={Card} alt="Transition Card Image" className="w-full h-auto" />
             <div className="flex py-4">
