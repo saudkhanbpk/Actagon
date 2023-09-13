@@ -5,10 +5,10 @@ import { Link } from "react-router-dom";
 
 function Phonelogin() {
   return (
-    <div className=" min-h-screen flex justify-center items-center">
-      <div className=" p-4 rounded-lg w-full max-w-md">
+    <div className=" min-h-screen flex justify-center  ">
+      <div className=" p-4 rounded-lg w-full max-w-md mt-14 ">
         {/* Heading */}
-        <h2 className="text-center text-2xl font-[20px] mb-8">
+        <h2 className="text-center text-[textColorBlack]  font-[20px]  mb-12">
           Welcome back <br />
           Enter your phone number:
         </h2>
@@ -32,7 +32,7 @@ function Phonelogin() {
         <div className="mt-28">
         <Link to='/text'>
           <button
-            className="w-full h-[45px] bg-blueButtonColor hover:bg-blue-600 text-[white] font-bold py-2 px-4 rounded-lg focus:outline-none focus:shadow-outline-blue transition duration-300 ease-in-out"
+            className="w-full h-[45px] bg-blueButtonColor hover:bg-blue-600 text-[white] font-bold py-2 px-4 rounded-lg focus:outline-none focus:shadow-outline-blue "
             type="submit"
           >
             NEXT
