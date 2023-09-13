@@ -1,6 +1,7 @@
 import React from 'react';
 import payment from '../../../assets/payment.png';
 import symbol from '../../../assets/Symbol.png';
+import { Link } from 'react-router-dom';
 
 const PaymentsEmpty = () => {
     return (
@@ -8,7 +9,7 @@ const PaymentsEmpty = () => {
             <h2 className='text-textColorBlack text-base font-medium'>
                 Wallet
             </h2>
-            <hr style={{width: '398px', height: '98px', background: '#FFFFFF'}}/>
+            <hr style={{ width: '398px', height: '98px', background: '#FFFFFF' }} />
             <div className='flex flex-col items-center justify-center mt-20'>
                 <div className='' style={{
                     background: 'rgba(118, 118, 128, 0.12)',
@@ -23,25 +24,29 @@ const PaymentsEmpty = () => {
                     />
                 </div>
 
-                <div style={{
-                }}>
-                    <img
-                        className='relative'
-                        src={symbol}
-                        alt="Plus Icon"
-                        style={{
-                            width: '24px',
-                            height: '22px',
-                            bottom: '18px',
-                            left: '32px',
-                            background: '#FFF',
-                            padding: '4px 5px 4px 4px',
-                            borderRadius: '100px'
+                <Link to='/addCard'>
+                    <div style={{
+                    }}>
+                        <img
+                            className='relative'
+                            src={symbol}
+                            alt="Plus Icon"
+                            style={{
+                                width: '24px',
+                                height: '22px',
+                                bottom: '18px',
+                                left: '32px',
+                                background: '#FFF',
+                                padding: '4px 5px 4px 4px',
+                                borderRadius: '100px'
 
-                        }}
-                    />
-                </div>
-                <h2 className='text-blueButtonColor font-medium'>Add Card</h2>
+                            }}
+                        />
+                    </div>
+                </Link>
+                <Link to='/addCard'>
+                    <h2 className='text-blueButtonColor font-medium'>Add Card</h2>
+                </Link>
             </div>
         </div>
     );

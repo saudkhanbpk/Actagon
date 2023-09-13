@@ -26,6 +26,15 @@ import Chats from "./components/Chats/Chats";
 import NewMessages from "./components/NewMessages/NewMessages";
 import Poll from "./components/Poll/Poll";
 import ChatScreen from "./components/ChatScreen/ChatScreen";
+import AddCard from "./components/Payments/AddCard/AddCard";
+import Pay from "./components/Payments/Pay/Pay";
+import AmountToPay from "./components/Payments/AmountToPay/AmountToPay";
+import Request from "./components/Payments/Request/Request";
+import AmountToRequset from "./components/Payments/AmountToRequest/AmountToRequest";
+import SplitPayment from "./components/Payments/SplitPayment/SplitPayment";
+import SplitAmount from "./components/Payments/SplitAmount/SplitAmount";
+import SlipPayment from "./components/Payments/SlipPayment/SlipPayment";
+import DateSelSchedul from "./components/Payments/DateSelSchedul/DateSelSchedul";
 function App() {
   return <div>
     <BrowserRouter>
@@ -55,6 +64,15 @@ function App() {
         <Route path="/poll" element={<Poll/>} />
         <Route path="/chatscreen" element={<ChatScreen/>} />
 
+        <Route path="/addCard" element={<AddCard />} />
+        <Route path="/pay" element={<Pay />} />
+        <Route path="/amountToPay" element={<AmountToPay />} />
+        <Route path="/request" element={<Request />} />
+        <Route path="/amountToRequest" element={<AmountToRequset />} />
+        <Route path="/splitPayment" element={<SplitPayment />} />
+        <Route path="/splitAmount" element={<SplitAmount />} />
+        <Route path="/slipPayment" element={<SlipPayment />} />
+        <Route path="/dateSchedule" element={<DateSelSchedul />} />
         <Route path="*" element={<h1>Not Found</h1>} />
 
       </Routes>
