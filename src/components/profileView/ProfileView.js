@@ -4,7 +4,10 @@ function ProfileView() {
   const { id } = useParams()
   console.log(id)
   return (
-    <div>ProfileView</div>
+    <>
+      <h1>Profile View</h1>
+      <h2>{id}</h2>
+    </>
   )
 }
 

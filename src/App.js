@@ -9,7 +9,7 @@ import SignupCode from "./components/Signup-cod-number/Signup";
 import LoginCode from "./components/Login-code/LoginCode";
 import EmailCode from "./components/Emailed-Code/EmailCode";
 import ActivityScreen from "./components/ActivityScreen/ActivityScreen";
-import PwdResetEmail from "./components/Email-reset-password/PwdResetEmail";
+import SignupEmail from "./components/SignupEmail/SignupEmail";
 import User from "./components/UserName/User";
 import ChangeUserName from "./components/ChangeUserName/ChangeUserName";
 import UpdateProfilePicture from "./components/updateProfilePic/UpdateProfilePicture";
@@ -17,11 +17,14 @@ import Profile from "./components/profile/Profile";
 import BottomNavigation from "./components/bottomNavigation/BottomNavigation";
 import Friends from "./components/friends/Friends";
 import Search from "./components/search/Search";
+import YouUserName from "./components/YourUserName/YourUserName";
+import PaymentsEmpty from "./components/Payments/PaymentsEmpty/PaymentsEmpty";
+import Transition from "./components/Payments/Transactions/Transactions";
 import ProfileView from "./components/profileView/ProfileView";
 function App() {
   return <div>
     <BrowserRouter>
-      {/* <BottomNavigation /> */}
+      <BottomNavigation />
       <Routes>
         <Route path="/" element={<Logo />} />
         <Route path="/signup" element={<Signup />} />
@@ -31,13 +34,16 @@ function App() {
         <Route path="/logincode" element={<LoginCode />} />
         <Route path="/emailedcode" element={<EmailCode />} />
         <Route path="/activity" element={<ActivityScreen />} />
-        <Route path="/reset-password" element={<PwdResetEmail />} />
         <Route path="/user" element={<User />} />
         <Route path="/changeUserName" element={<ChangeUserName />} />
         <Route path="/account" element={<Profile />} />
         <Route path="/friends" element={<Friends />} />
         <Route path="/search" element={<Search />} />
         <Route path="/profileView/:id" element={<ProfileView />} />
+        <Route path="/signup-email" element={<SignupEmail />} />
+        <Route path="/paymentsEmpty" element={<PaymentsEmpty />} />
+        <Route path="/yourUserName" element={<YouUserName />} />
+        <Route path="/transition" element={<Transition />} />
         <Route path="*" element={<h1>Not Found</h1>} />
 
       </Routes>

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 function User() {
 
     return (
@@ -13,22 +14,24 @@ function User() {
                         type="password" 
                         className="h-10 px-4 w-full border rounded-lg"
                         placeholder="First"
-                        style={{ color: "#888", background: 'rgba(118,118,128,0.12)' }}
+                        style={{ color: "#888", background: 'rgba(118,118,128,0.12)', border: 'none' }}
                     />
                     <input
                         type="password" 
                         className="h-10 px-4 w-full border rounded-lg"
                         placeholder="Last"
-                        style={{ color: "#888", background: 'rgba(118,118,128,0.12)' }}
+                        style={{ color: "#888", background: 'rgba(118,118,128,0.12)', border: 'none' }}
                     />
                 </div>
                 <div className="mt-14">
+                    <Link to='/yourUserName'>
                     <button
-                        className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg focus:outline-none focus:shadow-outline-blue transition duration-300 ease-in-out"
+                        className="w-full bg-blueButtonColor text-[white] font-bold py-2 px-4 rounded-lg focus:outline-none focus:shadow-outline-blue transition duration-300 ease-in-out"
                         type="submit"
                     >
                         Next
                     </button>
+                    </Link>
                 </div>
             </div>
         </div>
