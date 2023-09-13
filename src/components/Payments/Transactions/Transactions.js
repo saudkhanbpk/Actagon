@@ -31,7 +31,7 @@ function Transition() {
             </div>
 
             <div className="w-full flex px-3 py-3 bg-[#FFF]">
-                <img src={Rectangle} alt="Image"/>
+                <img src={Rectangle} alt="Image" />
                 <div className='w-full px-2'>
                     <div className="flex w-full text-[#8A9099] items-center text-xs justify-between">
                         <div className="text-textColorBlack font-medium text-base">
