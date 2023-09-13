@@ -54,7 +54,7 @@ function SignupCode() {
 
 
         <div className="mt-14">
-          <Link to="/logincode">
+          <Link to="/signup-email">
             <button
               className="w-full bg-blueButtonColor hover:bg-blue-600 text-[white] font-bold py-2 px-4 rounded-lg focus:outline-none focus:shadow-outline-blue transition duration-300 ease-in-out h-[45px]"
               type="submit"
