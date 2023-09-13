@@ -7,7 +7,8 @@ module.exports = {
     colors: {
       textColorBlack: '#000000',
       textInputBackgroundColor: "rgba(118, 118, 128, 0.12)",
-      blueButtonColor: "#3478F6"
+      blueButtonColor: "#3478F6",
+      accountBorderRadius: "12px 12px 0px 0px;"
     },
     // fontFamily: {
     //   : ['SF Pro']
