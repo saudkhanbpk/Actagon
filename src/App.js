@@ -35,6 +35,7 @@ import SplitPayment from "./components/Payments/SplitPayment/SplitPayment";
 import SplitAmount from "./components/Payments/SplitAmount/SplitAmount";
 import SlipPayment from "./components/Payments/SlipPayment/SlipPayment";
 import DateSelSchedul from "./components/Payments/DateSelSchedul/DateSelSchedul";
+import GroupChat from "./components/GroupChat/GroupChat";
 function App() {
   return <div>
     <BrowserRouter>
@@ -73,6 +74,7 @@ function App() {
         <Route path="/splitAmount" element={<SplitAmount />} />
         <Route path="/slipPayment" element={<SlipPayment />} />
         <Route path="/dateSchedule" element={<DateSelSchedul />} />
+        <Route path="/group" element={<GroupChat />} />
         <Route path="*" element={<h1>Not Found</h1>} />
 
       </Routes>

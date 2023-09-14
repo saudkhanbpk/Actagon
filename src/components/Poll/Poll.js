@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Poll = () => {
   const [selectedOption, setSelectedOption] = useState(null);
@@ -12,9 +13,12 @@ const Poll = () => {
   return (
     <div className="w-full m-auto">
       <div className="flex justify-between shadow-xl w-full p-3 items-center">
+      <Link to='/group'>
         <p className="text-blueButtonColor text-center text-lg font-semibold leading-5">
           Cancel
         </p>
+
+      </Link>
         <p className="text-textColorBlack text-center text-lg font-semibold leading-5">
           New Poll
         </p>
