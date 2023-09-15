@@ -47,10 +47,10 @@ function Textcode() {
         </div>
         <div className="text-center">
           <p className="text-sm text-[#C5C5C6]">
-            Didn't get it? <span className="text-blue-500">Tap to Resend</span>
+            Didn't get it? <span className="text-blueButtonColor">Tap to Resend</span>
           </p>
           <p className="mt-10">
-            <span className="text-[#3478F6]">I lost access to my number</span>
+            <span className="text-blueButtonColor">I lost access to my number</span>
           </p>
         </div>
 

@@ -21,6 +21,11 @@ import YouUserName from "./components/YourUserName/YourUserName";
 import PaymentsEmpty from "./components/Payments/PaymentsEmpty/PaymentsEmpty";
 import Transition from "./components/Payments/Transactions/Transactions";
 import ProfileView from "./components/profileView/ProfileView";
+import Message from "./components/Messages/Message";
+import Chats from "./components/Chats/Chats";
+import NewMessages from "./components/NewMessages/NewMessages";
+import Poll from "./components/Poll/Poll";
+import ChatScreen from "./components/ChatScreen/ChatScreen";
 import AddCard from "./components/Payments/AddCard/AddCard";
 import Pay from "./components/Payments/Pay/Pay";
 import AmountToPay from "./components/Payments/AmountToPay/AmountToPay";
@@ -30,6 +35,7 @@ import SplitPayment from "./components/Payments/SplitPayment/SplitPayment";
 import SplitAmount from "./components/Payments/SplitAmount/SplitAmount";
 import SlipPayment from "./components/Payments/SlipPayment/SlipPayment";
 import DateSelSchedul from "./components/Payments/DateSelSchedul/DateSelSchedul";
+import GroupChat from "./components/GroupChat/GroupChat";
 function App() {
   return <div>
     <BrowserRouter>
@@ -53,6 +59,12 @@ function App() {
         <Route path="/paymentsEmpty" element={<PaymentsEmpty />} />
         <Route path="/yourUserName" element={<YouUserName />} />
         <Route path="/transition" element={<Transition />} />
+        <Route path="/message" element={<Message/>} />
+        <Route path="/chat" element={<Chats/>} />
+        <Route path="/newmessage" element={<NewMessages/>} />
+        <Route path="/poll" element={<Poll/>} />
+        <Route path="/chatscreen" element={<ChatScreen/>} />
+
         <Route path="/addCard" element={<AddCard />} />
         <Route path="/pay" element={<Pay />} />
         <Route path="/amountToPay" element={<AmountToPay />} />
@@ -62,6 +74,7 @@ function App() {
         <Route path="/splitAmount" element={<SplitAmount />} />
         <Route path="/slipPayment" element={<SlipPayment />} />
         <Route path="/dateSchedule" element={<DateSelSchedul />} />
+        <Route path="/group" element={<GroupChat />} />
         <Route path="*" element={<h1>Not Found</h1>} />
 
       </Routes>
