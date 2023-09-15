@@ -2,6 +2,7 @@ import React from "react";
 import backButton from "./../../assets/Back Button.png";
 import defaultProfile from "../../assets/Frame 427321648.png";
 import cameraIcon from "./../../assets/Frame 427321659.png";
+import BottomNavigation from "../bottomNavigation/BottomNavigation";
 function Profile() {
   return (
     <>
@@ -90,6 +91,7 @@ function Profile() {
           </p>
         </div>
       </div>
+      {/* <BottomNavigation /> */}
     </>
   );
 }

@@ -3,9 +3,9 @@ import searchIcon from "./../../assets/search_icon.png";
 import mic from "./../../assets/Clear Glyph.png";
 import { useNavigate, useParams } from "react-router";
 import ProfileView from "../profileView/ProfileView";
+import BottomNavigation from "../bottomNavigation/BottomNavigation";
 function Friends() {
-  const { id } = useParams();
-  console.log(id);
+
   const navigate = useNavigate();
   const friends = [
     {
@@ -25,6 +25,11 @@ function Friends() {
     },
     {
       id: "4",
+      name: "Zeb Khan",
+      image: "https://picsum.photos/200/300",
+    },
+    {
+      id: "5",
       name: "Zeb Khan",
       image: "https://picsum.photos/200/300",
     },
@@ -91,6 +96,7 @@ function Friends() {
           );
         })}
       </div>
+      {/* <BottomNavigation /> */}
     </>
   );
 }

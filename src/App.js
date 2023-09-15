@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from 'react'
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Logo from "./components/Logo/Logo";
@@ -21,18 +22,35 @@ import YouUserName from "./components/YourUserName/YourUserName";
 import PaymentsEmpty from "./components/Payments/PaymentsEmpty/PaymentsEmpty";
 import Transition from "./components/Payments/Transactions/Transactions";
 import ProfileView from "./components/profileView/ProfileView";
+import Register from "./pages/Register/Register";
+import Login from "./pages/login/Login";
 function App() {
+  const [token, setToken] = useState(null)
+  const getToken = () => {
+    const tokenString = localStorage.getItem('loginToken')
+    setToken(tokenString)
+  }
+  useEffect(() => {
+    getToken()
+  }, [])
+
   return <div>
     <BrowserRouter>
-      <BottomNavigation />
+      {/* <BottomNavigation /> */}
       <Routes>
-        <Route path="/" element={<Logo />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/phone" element={<Phonelogin />} />
-        <Route path="/text" element={<Textcode />} />
-        <Route path="/signup-code" element={<SignupCode />} />
-        <Route path="/logincode" element={<LoginCode />} />
-        <Route path="/emailedcode" element={<EmailCode />} />
+        {
+          token ? <Route path="/" element={<BottomNavigation />} /> : <Route path="/" element={<Logo />} />
+        }
+        {/* <Route path="/" element={<Logo />} />
+        <Route path="/home" element={<BottomNavigation />} /> */}
+        {/* <Route path="/signup" element={<Signup />} /> */}
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
+        {/* <Route path="/phone" element={<Phonelogin />} /> */}
+        {/* <Route path="/text" element={<Textcode />} /> */}
+        {/* <Route path="/signup-code" element={<SignupCode />} /> */}
+        {/* <Route path="/logincode" element={<LoginCode />} /> */}
+        {/* <Route path="/emailedcode" element={<EmailCode />} /> */}
         <Route path="/activity" element={<ActivityScreen />} />
         <Route path="/user" element={<User />} />
         <Route path="/changeUserName" element={<ChangeUserName />} />

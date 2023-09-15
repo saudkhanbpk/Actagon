@@ -1,6 +1,7 @@
 import React from 'react'
 import searchIcon from "./../../assets/search_icon.png";
 import mic from "./../../assets/Clear Glyph.png";
+import BottomNavigation from '../bottomNavigation/BottomNavigation';
 function Search() {
   const friends = [
     {
@@ -52,7 +53,7 @@ function Search() {
       </div>
       <div className="flex  self-start">
         <h5 className="text-textColorBlack text-base font-semibold leading-5 p-2">
-          56 Friends
+          Suggestions
         </h5>
       </div>
       {friends.map((friend) => {
@@ -76,6 +77,7 @@ function Search() {
           </div>
         );
       })}
+      {/* <BottomNavigation /> */}
     </div>
   )
 }
