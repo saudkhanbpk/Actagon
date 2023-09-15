@@ -14,7 +14,6 @@ function SignupCode() {
           Enter the code we just texted You
         </h2>
 
-
         <div className="mb-3 border-none ">
           <OtpInput
             value={otp}
