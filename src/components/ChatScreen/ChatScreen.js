@@ -1,12 +1,23 @@
-import React from "react";
+import React,{ useState } from "react";
 import Rectangle from "../../assets/Rectangle.png";
 import gallery from "../../assets/gallery.png";
 import send from "../../assets/send.png";
+import dollar from "../../assets/dollar.png";
+import search from "../../assets/search.png";
+import location from "../../assets/location.png";
+import media from "../../assets/media.png";
+import friends from "../../assets/friends.png";
+import docs from "../../assets/docs.png";
+import schedule from "../../assets/schedule.png";
+import poll from "../../assets/poll.png";
 import { FiVideo, FiPhone } from "react-icons/fi";
 import { MdOutlineArrowBackIosNew } from "react-icons/md";
+import { Link } from "react-router-dom";
+
 
 
 const ChatScreen = () => {
+  const [showGallery, setShowGallery] = useState(true);
   return (
     <div className="h-screen flex flex-col bg-gray-100">
       {/* Header */}
@@ -91,7 +102,9 @@ const ChatScreen = () => {
       <div className="flex justify-center items-center mb-2">
       
       <div className="m-2">
-        <img src={gallery} alt="Gallery Icon" className="w-10 h-8" />
+        <img src={gallery} alt="Gallery Icon" className="w-10 h-8" 
+          onClick={() => setShowGallery(!showGallery)}
+        />
       </div>
 
       <div className="relative rounded-lg w-full mr-1">
@@ -106,6 +119,67 @@ const ChatScreen = () => {
     </div>
 
       </div>
+
+      {!showGallery && (
+        <div className="bg-white h-[50%] justify-center border-top rounded-xl bg-[lightgray] p-2">
+          <div className="flex mt-4 w-full justify-between ">
+          <Link to='/paymentsEmpty'>
+            <div className="mx-2 flex items-center justify-center flex-col">
+              <img src={dollar} alt="Send Icon" className="w-[60px] h-[60px]" />
+              <p className="text-[#817F80] text-sm">Payment</p>
+            </div>
+
+          </Link>
+            <div className="mx-2 flex items-center justify-center flex-col">
+              <img src={search} alt="Send Icon" className="w-[60px] h-[60px]" />
+              <p className="text-[#817F80] text-sm">Search</p>
+            </div>
+            <Link to='/poll'>
+            <div className="mx-2 flex items-center justify-center flex-col">  
+              <img src={poll} alt="Send Icon" className="w-[60px] h-[60px]" />
+              <p className="text-[#817F80] text-sm">Poll</p>
+
+            </div>
+            </Link>
+            <div className="mx-2 flex items-center justify-center flex-col">
+              <img
+                src={location}
+                alt="Send Icon"
+                className="w-[60px] h-[60px]"
+              />
+              <p className="text-[#817F80] text-sm">location</p>
+            </div>
+          </div>
+
+          <div className="flex mt-4 w-full justify-between ">
+            <div className="mx-2 flex items-center justify-center flex-col">
+              <img src={media} alt="Send Icon" className="w-[60px] h-[60px]" />
+              <p className="text-[#817F80] text-sm">Media</p>
+            </div>
+
+            <div className="mx-2 flex items-center justify-center flex-col">
+              <img
+                src={friends}
+                alt="Send Icon"
+                className="w-[60px] h-[60px]"
+              />
+              <p className="text-[#817F80] text-sm">friends</p>
+            </div>
+            <div className="mx-2 flex items-center justify-center flex-col">
+              <img
+                src={schedule}
+                alt="Send Icon"
+                className="w-[60px] h-[60px]"
+              />
+              <p className="text-[#817F80] text-sm">shecdule</p>
+            </div>
+            <div className="mx-2 flex items-center justify-center flex-col">
+              <img src={docs} alt="Send Icon" className="w-[60px] h-[60px]" />
+              <p className="text-[#817F80] text-sm">docs</p>
+            </div>
+          </div>
+        </div>
+      )}
       
     </div>
   );
