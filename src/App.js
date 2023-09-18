@@ -14,7 +14,7 @@ import User from "./components/UserName/User";
 import ChangeUserName from "./components/ChangeUserName/ChangeUserName";
 import UpdateProfilePicture from "./components/updateProfilePic/UpdateProfilePicture";
 import Profile from "./components/profile/Profile";
-import BottomNavigation from "./components/bottomNavigation/BottomNavigation";
+// import BottomNavigation from "./components/bottomNavigation/BottomNavigation";
 import Friends from "./components/friends/Friends";
 import Search from "./components/search/Search";
 import YouUserName from "./components/YourUserName/YourUserName";
@@ -36,10 +36,14 @@ import SplitAmount from "./components/Payments/SplitAmount/SplitAmount";
 import SlipPayment from "./components/Payments/SlipPayment/SlipPayment";
 import DateSelSchedul from "./components/Payments/DateSelSchedul/DateSelSchedul";
 import GroupChat from "./components/GroupChat/GroupChat";
+import Location from "./components/Location/Location";
+import ShareNavigation from "./components/ShareNavigation/ShareNavigation";
+import ShareLocation from "./components/ShareLocation/ShareLocation";
 function App() {
   return <div>
     <BrowserRouter>
       {/* <BottomNavigation /> */}
+      <ShareNavigation />        
       <Routes>
         <Route path="/" element={<Logo />} />
         <Route path="/signup" element={<Signup />} />
@@ -74,10 +78,12 @@ function App() {
         <Route path="/splitAmount" element={<SplitAmount />} />
         <Route path="/slipPayment" element={<SlipPayment />} />
         <Route path="/dateSchedule" element={<DateSelSchedul />} />
-        <Route path="/group" element={<GroupChat />} />
+        <Route path="/group" element={<GroupChat />} />        
+        <Route path="/location" element={<Location />} />        
+        <Route path="/sharelocation" element={<ShareLocation />} />        
         <Route path="*" element={<h1>Not Found</h1>} />
-
-      </Routes>
+        
+            </Routes>
     </BrowserRouter>
   </div>;
 }
