@@ -1,8 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { MdOutlineArrowBackIosNew } from 'react-icons/md'
 function User() {
 
     return (
+        <>
+        <Link to='/signup-email'>
+                <h2 className="text-blueButtonColor px-5 py-2 flex items-center font-medium text-base">
+                    <MdOutlineArrowBackIosNew />
+                    <span className="ml-2">Back</span>
+                </h2>
+            </Link>
         <div className="min-h-screen flex justify-center items-center">
             <div className="p-4 rounded-lg w-full max-w-md">
                 <h2 className="text-center line-height: 1.25rem font-medium mb-8">
@@ -35,6 +43,7 @@ function User() {
                 </div>
             </div>
         </div>
+        </>
     );
 }
 

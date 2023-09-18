@@ -1,17 +1,20 @@
 import React from 'react';
 import { MdOutlineArrowBackIosNew } from 'react-icons/md';
 import rectangle from '../../../assets/Rectangle.png';
+import { Link } from 'react-router-dom';
 
 const SlipPayment = () => {
     return (
         <div className="bg-[#F2F2F6] min-h-screen">
             <div className="px-4 py-2 flex justify-between">
-                <h2 className="text-blueButtonColor flex items-center font-medium text-base">
-                    <MdOutlineArrowBackIosNew />
-                    <span className="ml-2">Back</span>
-                </h2>
-                <h2 className="text-textColorBlack font-medium text-base">Add Card</h2>
-                <h2 className="text-blueButtonColor font-medium text-base">Add</h2>
+                <Link to='/splitAmount'>
+                    <h2 className="text-blueButtonColor flex items-center font-medium text-base">
+                        <MdOutlineArrowBackIosNew />
+                        <span className="ml-2">Back</span>
+                    </h2>
+                </Link>
+
+                <h2 className="text-blueButtonColor font-medium text-base">Done</h2>
             </div>
             <div className="px-4 py-2 text-center flex flex-col justify-center items-center">
                 <img src={rectangle} alt="User Avatar" className="w-16  md:w-32 md:h-32 xl:w-48 xl:h-48 rounded-full" />

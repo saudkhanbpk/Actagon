@@ -3,6 +3,7 @@ import { AiFillCheckCircle } from 'react-icons/ai'
 import { MdOutlineArrowBackIosNew } from 'react-icons/md';
 import searchIcon from "../../../assets/search_icon.png";
 import mic from "../../../assets/Clear Glyph.png";
+import { Link } from 'react-router-dom';
 
 function SplitPayment() {
     // State to manage selected chats
@@ -50,30 +51,32 @@ function SplitPayment() {
                     <span className="ml-2">Back</span>
                 </h2>
                 <h2 className="text-textColorBlack font-medium text-base">Split Between</h2>
-                <h2 className="text-blueButtonColor font-medium text-base">Next</h2>
+                <Link to='/splitAmount'>
+                    <h2 className="text-blueButtonColor font-medium text-base">Next</h2>
+                </Link>
             </div>
 
             <div
-        className="flex justify-between items-center   mt-5 rounded-xl p-2 !ml-2 !mr-2"
-        style={{ background: "rgba(118, 118, 128, 0.12)" }}
-      >
-        <div className="flex gap-1 items-center">
-          <div>
-            <img src={searchIcon} alt="" className="" />
-          </div>
-          <div>
-            <input
-              type="text"
-              placeholder="Name, username, email..."
-              className="flex p-3 w-[243px] h-[37px]    items-center bg-transparent	"
-              style={{ background: "transparent", outline: "none" }}
-            />
-          </div>
-        </div>
-        <div>
-          <img src={mic} alt="" />
-        </div>
-      </div>
+                className="flex justify-between items-center   mt-5 rounded-xl p-2 !ml-2 !mr-2"
+                style={{ background: "rgba(118, 118, 128, 0.12)" }}
+            >
+                <div className="flex gap-1 items-center">
+                    <div>
+                        <img src={searchIcon} alt="" className="" />
+                    </div>
+                    <div>
+                        <input
+                            type="text"
+                            placeholder="Name, username, email..."
+                            className="flex p-3 w-[243px] h-[37px]    items-center bg-transparent	"
+                            style={{ background: "transparent", outline: "none" }}
+                        />
+                    </div>
+                </div>
+                <div>
+                    <img src={mic} alt="" />
+                </div>
+            </div>
 
             {/* Selected Chats Count */}
             <div className="flex self-start">

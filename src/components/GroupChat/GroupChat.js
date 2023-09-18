@@ -138,23 +138,23 @@ const GroupChat = () => {
       {!showGallery && (
         <div className="bg-white h-[50%] justify-center border-top rounded-xl bg-[lightgray] p-2">
           <div className="flex mt-4 w-full justify-between ">
-          <Link to='/paymentsEmpty'>
-            <div className="mx-2 flex items-center justify-center flex-col">
-              <img src={dollar} alt="Send Icon" className="w-[60px] h-[60px]" />
-              <p className="text-[#817F80] text-sm">Payment</p>
-            </div>
+            <Link to='/paymentsEmpty'>
+              <div className="mx-2 flex items-center justify-center flex-col">
+                <img src={dollar} alt="Send Icon" className="w-[60px] h-[60px]" />
+                <p className="text-[#817F80] text-sm">Payment</p>
+              </div>
 
-          </Link>
+            </Link>
             <div className="mx-2 flex items-center justify-center flex-col">
               <img src={search} alt="Send Icon" className="w-[60px] h-[60px]" />
               <p className="text-[#817F80] text-sm">Search</p>
             </div>
             <Link to='/poll'>
-            <div className="mx-2 flex items-center justify-center flex-col">  
-              <img src={poll} alt="Send Icon" className="w-[60px] h-[60px]" />
-              <p className="text-[#817F80] text-sm">Poll</p>
+              <div className="mx-2 flex items-center justify-center flex-col">
+                <img src={poll} alt="Send Icon" className="w-[60px] h-[60px]" />
+                <p className="text-[#817F80] text-sm">Poll</p>
 
-            </div>
+              </div>
             </Link>
             <div className="mx-2 flex items-center justify-center flex-col">
               <img
