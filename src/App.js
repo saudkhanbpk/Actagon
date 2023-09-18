@@ -39,6 +39,9 @@ import GroupChat from "./components/GroupChat/GroupChat";
 import Location from "./components/Location/Location";
 import ShareNavigation from "./components/ShareNavigation/ShareNavigation";
 import ShareLocation from "./components/ShareLocation/ShareLocation";
+import InviteFriends from "./components/InviteFriends/InviteFriends";
+import SelectPeople from "./components/SelectPeople/SelectPeople";
+import AddSchedule from "./components/AddSchedule/AddSchedule";
 function App() {
   return <div>
     <BrowserRouter>
@@ -80,7 +83,11 @@ function App() {
         <Route path="/dateSchedule" element={<DateSelSchedul />} />
         <Route path="/group" element={<GroupChat />} />        
         <Route path="/location" element={<Location />} />        
-        <Route path="/sharelocation" element={<ShareLocation />} />        
+        <Route path="/sharelocation" element={<ShareLocation />} />
+        <Route path="/invitefriend" element={<InviteFriends />} />
+        <Route path="/selectpeople" element={<SelectPeople />} />
+        <Route path="/addschedule" element={<AddSchedule />} />
+
         <Route path="*" element={<h1>Not Found</h1>} />
         
             </Routes>
