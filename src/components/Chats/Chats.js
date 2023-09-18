@@ -6,7 +6,7 @@ import Rectangle3 from '../../assets/Rectangle3.png'
 import Rectangle1 from '../../assets/Rectangle1.png'
 import Rectangle2 from '../../assets/Rectangle2.png'
 // import { useNavigate, useParams } from "react-router";
-import ProfileView from "../profileView/ProfileView";
+import {MdOutlineArrowBackIosNew} from 'react-icons/md'
 import { Link } from "react-router-dom";
 
 
@@ -38,8 +38,14 @@ const Chats = () => {
   return (
     <>
         <div className="min-h-screen flex flex-col mt-2 ">
-        <div className="flex bg-blue-500 text-white mt-2 px-4 ">
-            <h1 className="text-2xl pl-12 font-semibold text-center  mx-auto">Messages</h1>
+        <div className="flex bg-blue-500 text-white mt-2 px-2 ">
+        <Link to=''>
+        <h2 className="text-blueButtonColor py-2 flex items-center font-medium text-base">
+          <MdOutlineArrowBackIosNew />
+          <span className="ml-1">Back</span>
+        </h2>
+      </Link>
+            <h1 className="text-2xl pl-1 font-semibold text-center  mx-auto">Messages</h1>
             <Link to='/newmessage'>       
             <button className="bg-blue-500  text-white rounded-full w-10 h-10 flex items-center font-[20px] justify-end">
           <img src={plus} alt='plus icon'/>
