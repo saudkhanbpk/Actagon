@@ -1,5 +1,6 @@
 import React from 'react'
 import calender from '../../../assets/calender.png'
+import { Link } from 'react-router-dom';
 function Request() {
     const friends = [
         {
@@ -57,23 +58,25 @@ function Request() {
             </div>
             {friends.map((friend) => {
                 return (
-                    <div className="flex gap-5 items-center p-2" key={friend.id}>
-                        <div>
-                            <img
-                                src={friend.image}
-                                alt=""
-                                className="rounded-full   object-cover w-[60px] h-[60px] no-repeat "
-                            />
+                    <Link to='/amountToRequest'>
+                        <div className="flex gap-5 items-center p-2" key={friend.id}>
+                            <div>
+                                <img
+                                    src={friend.image}
+                                    alt=""
+                                    className="rounded-full   object-cover w-[60px] h-[60px] no-repeat "
+                                />
+                            </div>
+                            <div>
+                                <p className="text-textColorBlack text-lg font-normal leading-5">
+                                    {friend.name}
+                                </p>
+                                <p className="text-[#817F80] text-sm font-normal leading-5">
+                                    @username
+                                </p>
+                            </div>
                         </div>
-                        <div>
-                            <p className="text-textColorBlack text-lg font-normal leading-5">
-                                {friend.name}
-                            </p>
-                            <p className="text-[#817F80] text-sm font-normal leading-5">
-                                @username
-                            </p>
-                        </div>
-                    </div>
+                    </Link>
                 );
             })}
         </div>

@@ -5,6 +5,8 @@ import { BiDollar } from "react-icons/bi";
 import { FiArrowDownLeft } from "react-icons/fi";
 import { FiArrowUpRight } from "react-icons/fi";
 import { IoIosArrowForward } from "react-icons/io";
+import { MdOutlineArrowBackIosNew } from "react-icons/md";
+import { Link } from "react-router-dom";
 function Transition() {
     const cards = [
         {
@@ -53,13 +55,18 @@ function Transition() {
 
     return (
         <>
-            <div className="flex flex-col items-center py-3">
-                <h2 className='text-textColorBlack text-base font-medium'>
+            <div className='px-4 flex items-center py-2'>
+                <Link to='/addCard'>
+                    <p className="text-blueButtonColor items-center  flex justify-start text-center text-base font-semibold leading-5">
+                        <MdOutlineArrowBackIosNew />
+                        <span className="ml-1">Back</span>
+                    </p>
+                </Link>
+                <p className="text-textColorBlack w-full mr-12 flex justify-center items-center text-center text-lg font-semibold leading-5">
                     Wallet
-                </h2>
-                <hr style={{ width: '300px', height: '5px', background: '#FFFFFF' }} />
-
+                </p>
             </div>
+            <hr style={{ width: '300px', height: '5px', background: '#FFFFFF' }} />
             <div className="max-w-sm px-3 py-2 mx-auto bg-[#F2F2F6] shadow-lg rounded-lg overflow-hidden">
                 <img src={Card} alt="Transition Card Image" className="w-full h-auto" />
                 <div className="flex py-4 gap-1">
@@ -67,17 +74,21 @@ function Transition() {
                         style={{ borderRadius: "12px 0px 0px 12px", color: "#63BF84" }}
                         className="bg-[#FFFFFF] w-full text-lg flex px-4 items-center font-medium py-3"
                     >
-                        <BiDollar />
-                        <FiArrowDownLeft />
-                        Request
+                        <Link to='/request' className="flex items-center justify-center">
+                            <BiDollar />
+                            <FiArrowDownLeft />
+                            Request
+                        </Link>
                     </button>
                     <button
                         style={{ borderRadius: "0px 12px 12px 0px", color: "#3478F6" }}
                         className="bg-[#FFFFFF] w-full text-lg flex px-4 items-center font-medium py-3"
                     >
-                        <BiDollar />
-                        <FiArrowUpRight />
-                        Pay
+                        <Link to='/pay' className="flex items-center justify-center">
+                            <BiDollar />
+                            <FiArrowUpRight />
+                            Pay
+                        </Link>
                     </button>
                 </div>
 

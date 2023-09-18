@@ -1,16 +1,21 @@
 import React from 'react';
 import { MdOutlineArrowBackIosNew } from 'react-icons/md';
+import { Link } from 'react-router-dom';
 
 const AddCard = () => {
     return (
         <div className="bg-[#F2F2F6] min-h-screen">
             <div className="px-4 py-2 flex justify-between">
-                <h2 className="text-blueButtonColor flex items-center font-medium text-base">
-                    <MdOutlineArrowBackIosNew />
-                    <span className="ml-2">Back</span>
-                </h2>
+                <Link to='/paymentsEmpty'>
+                    <h2 className="text-blueButtonColor flex items-center font-medium text-base">
+                        <MdOutlineArrowBackIosNew />
+                        <span className="ml-2">Back</span>
+                    </h2>
+                </Link>
                 <h2 className="text-textColorBlack font-medium text-base">Add Card</h2>
-                <h2 className="text-blueButtonColor font-medium text-base">Add</h2>
+                <Link to='/transition'>
+                    <h2 className="text-blueButtonColor font-medium text-base">Add</h2>
+                </Link>
             </div>
             <div className="px-4 py-10 text-center">
                 <h2 className="text-textColorBlack text-3xl font-medium">Card Details</h2>

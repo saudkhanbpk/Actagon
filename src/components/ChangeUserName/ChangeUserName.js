@@ -1,8 +1,16 @@
 import React from "react";
+import { MdOutlineArrowBackIosNew } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 function ChangeUserName() {
   return (
     <>
+      <Link to='/yourUserName'>
+        <h2 className="text-blueButtonColor px-5 py-2 flex items-center font-medium text-base">
+          <MdOutlineArrowBackIosNew />
+          <span className="ml-2">Back</span>
+        </h2>
+      </Link>
       <div className="min-h-screen flex flex-col mt-20  items-center">
         <p className="text-textColorBlack text-center text-xl font-medium leading-5">
           Change your username
