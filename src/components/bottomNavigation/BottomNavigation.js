@@ -9,11 +9,22 @@ import blueProfile from "./../../assets/blueaccount.png";
 import blueFriends from "./../../assets/bluefriends.png";
 import blueSearch from "./../../assets/bluesearch.png";
 import { useNavigate } from "react-router";
-function BottomNavigation() {
+import Chats from "../Chats/Chats";
+import { PiChatText } from "react-icons/pi";
+import { useEffect, useRef, useState } from "react";
+
+function BottomNavigation({
+  user,
+  setUser,
+  conversations,
+  messages,
+  setMessages,
+  messageRef,
+  fetchMessages,
+  users,
+}) {
   const navigate = useNavigate();
   const [active, setActive] = React.useState(1);
-
-
 
   return (
     <>
@@ -72,10 +83,40 @@ function BottomNavigation() {
             Account
           </p>
         </div>
+        <div
+          className="flex flex-col items-center"
+          onClick={() => setActive(4)}
+        >
+          {active === 4 ? (
+            <PiChatText className="text-blueButtonColor text-center text-2xl font-medium  leading-normal" />
+          ) : (
+            <PiChatText className="text-2xl font-medium  leading-normal" />
+          )}
+          <p
+            className={`${active === 4
+              ? "text-blueButtonColor text-center text-xs font-medium leading-normal"
+              : "text-textColorBlack text-center text-xs font-medium leading-normal"
+              }`}
+          >
+            Messages
+          </p>
+        </div>
       </div>
       {active === 1 && <Friends />}
       {active === 2 && <Search />}
-      {active === 3 && <Profile />}
+      {active === 3 && <Profile user={user} setUser={setUser} />}
+      {active === 4 && (
+        <Chats
+          conversations={conversations}
+          messages={messages}
+          setMessages={setMessages}
+          messageRef={messageRef}
+          fetchMessages={fetchMessages}
+          users={users}
+          user={user}
+          setUser={setUser}
+        />
+      )}
     </>
   );
 }

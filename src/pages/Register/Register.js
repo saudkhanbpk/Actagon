@@ -111,8 +111,7 @@ function Register() {
         />
       )}
       {step === 5 && <YouUserName setStep={setStep} step={step}
-        setUserName={(username) => setRegisterData({ ...registerData, username })}
-        username={registerData.username}
+        setUserName={(username) => setRegisterData({ ...registerData, username })} username={registerData.username}
         firstName={registerData.firstName}
       />}
       {step === 6 && <UpdateProfilePicture setStep={setStep} step={step}

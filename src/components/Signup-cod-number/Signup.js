@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import OtpInput from "react-otp-input";
 
 function SignupCode({ setStep, step, verifyPhoneOtp, code, setCode }) {
   const handleVerifyOtp = () => {
@@ -7,7 +8,7 @@ function SignupCode({ setStep, step, verifyPhoneOtp, code, setCode }) {
   };
 
   return (
-    <div className="min-h-screen  mt-20">
+    <div className="min-h-screen flex justify-center items-center mt-2">
       <div className="p-4 rounded-lg w-full max-w-md">
         {/* Heading */}
         <h2 className="text-center line-height: 1.25rem font-medium mb-8">
@@ -38,7 +39,6 @@ function SignupCode({ setStep, step, verifyPhoneOtp, code, setCode }) {
           </p>
         </div>
 
-        {/* Button */}
         <div className="mt-14">
           {/* <Link to='/signup-email'> */}
           <button

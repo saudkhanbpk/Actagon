@@ -47,7 +47,7 @@ const EmailCode = ({ step, setStep, handleemailOtp, otp, setOtp }) => {
         </div>
         <div className="text-center">
           <p className="text-sm text-[#C5C5C6]">
-            Didn't get it? <span className='text-blue-500'>Tap to Resend</span>
+            Didn't get it? <span className='text-blueButtonColor'>Tap to Resend</span>
           </p>
 
         </div>

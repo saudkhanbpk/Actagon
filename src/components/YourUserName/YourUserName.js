@@ -1,13 +1,15 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-function YouUserName({ setStep, step, userName, setUserName, firstName }) {
+function YouUserName({ setStep, step, username, setUserName, firstName }) {
 
-    useEffect(() => {
-        const handleRandomGenerate =
-            Math.floor(Math.random() * 10000) + 1000;
-        const userNameGe = `@${firstName}${handleRandomGenerate}`;
-        // setUserName(userNameGe);
-    }, [setUserName, firstName]);
+    // const generateUserName = () => {
+    //     const random = Math.floor(Math.random() * 1000000);
+    //     const userName = firstName + random;
+    //     setUserName(userName);
+    // }
+    // useEffect(() => {
+    //     generateUserName();
+    // }, [])
 
 
     return (
@@ -23,7 +25,7 @@ function YouUserName({ setStep, step, userName, setUserName, firstName }) {
 
                     <div>
                         <h2 className="text-center text-3xl font-medium mb-3">
-                            {userName}
+                            {username}
                         </h2>
 
                         <Link to="/changeUserName">

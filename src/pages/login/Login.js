@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import Phonelogin from "../../components/Phonelogin/Phonelogin";
 import EmailCode from "../../components/Emailed-Code/EmailCode";
 import { emailAuth, verifyEmailOtp } from "./../../service/Auth";
+import { useNavigate } from "react-router";
 
 function Login() {
+  const navigate = useNavigate();
   const [login, setLogin] = useState({
     email: "",
     otp: "",
@@ -32,7 +34,9 @@ function Login() {
       otp: login.otp
     }).then((res) => {
       console.log("login line 33:", res)
+      localStorage.setItem("user", JSON.stringify(res.data.user))
       localStorage.setItem("loginToken", res.data.token)
+      navigate("/")
     }).catch((error) => {
       console.log("login line 35:", error)
     })

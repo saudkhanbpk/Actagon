@@ -50,6 +50,7 @@ function Signup({ setStep, step, handlePhoneAuth, number, setNumber }) {
             {/* <Link to='/signup-code'> */}
             <button
               onClick={() => sendOtp()}
+              disabled={!number}
               className="w-full bg-blueButtonColor text-[white] font-semibold py-2 px-4 rounded-lg focus:outline-none focus:shadow-outline-blue transition duration-300 ease-in-out"
               type="submit"
             >
