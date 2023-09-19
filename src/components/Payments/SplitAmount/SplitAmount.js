@@ -1,15 +1,18 @@
 import React from 'react';
 import { MdOutlineArrowBackIosNew } from 'react-icons/md';
 import rectangle from '../../../assets/Rectangle.png';
+import { Link } from 'react-router-dom';
 
 const SplitAmount = () => {
     return (
         <div className="bg-white px-2 md:p-8 lg:p-12 xl:p-16">
             <div className="flex justify-between items-center py-2">
-                <h2 className="text-blueButtonColor flex items-center font-medium text-base">
-                    <MdOutlineArrowBackIosNew />
-                    <span className="ml-2">Back</span>
-                </h2>
+                <Link to='/splitPayment'>
+                    <h2 className="text-blueButtonColor flex items-center font-medium text-base">
+                        <MdOutlineArrowBackIosNew />
+                        <span className="ml-2">Back</span>
+                    </h2>
+                </Link>
                 <h2 className="text-blueButtonColor font-medium text-base">Cancel</h2>
             </div>
 
@@ -43,7 +46,9 @@ const SplitAmount = () => {
                     />
                 </div>
                 <button className="mt-4 w-full md:w-[260px] bg-blueButtonColor text-[white] font-medium py-2 rounded-lg">
-                    Request
+                    <Link to='/slipPayment'>
+                        Request
+                    </Link>
                 </button>
             </div>
         </div>
