@@ -42,6 +42,7 @@ import ShareLocation from "./components/ShareLocation/ShareLocation";
 import InviteFriends from "./components/InviteFriends/InviteFriends";
 import SelectPeople from "./components/SelectPeople/SelectPeople";
 import AddSchedule from "./components/AddSchedule/AddSchedule";
+import AddToList from "./components/AddToList/AddToList";
 function App() {
   return <div>
     <BrowserRouter>
@@ -87,6 +88,7 @@ function App() {
         <Route path="/invitefriend" element={<InviteFriends />} />
         <Route path="/selectpeople" element={<SelectPeople />} />
         <Route path="/addschedule" element={<AddSchedule />} />
+        <Route path="/addtolist" element={<AddToList />} />
 
         <Route path="*" element={<h1>Not Found</h1>} />
         

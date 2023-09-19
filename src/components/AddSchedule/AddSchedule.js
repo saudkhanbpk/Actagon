@@ -10,15 +10,15 @@ import {MdOutlineArrowBackIosNew} from 'react-icons/md'
 function AddSchedule() {
   return (
     <>
-      <div className="flex bg-blue-500 text-white mt-2 px-2 ">
+      <div className="flex bg-blue-500 text-white mt-2 px-3 ">
         <Link to=''>
         <h2 className="text-blueButtonColor py-2 flex items-center font-medium text-base">
           <MdOutlineArrowBackIosNew />
           <span className="ml-1">Back</span>
         </h2>
       </Link>
-            <h3 className="text-2xl pl-1 font-semibold text-center  mx-auto">Add Schedule</h3>
-            <Link to='/newmessage'>       
+            <p className="text-lg pl-1 font-semibold text-center items-center pt-1 mx-auto">Add Schedule</p>
+            <Link to='/newmessage'>
             <button className="text-blueButtonColor text-white font-semibold rounded-full w-10 h-10 flex items-center  justify-end">
           Done
          </button>
@@ -38,22 +38,21 @@ function AddSchedule() {
                 <div className="">
                     <input
                         type="text"
-                        
+
                         className="w-full py-2 px-2 border-none focus:border-transparent focus:outline-none font-normal text-[#000] text-base "
                         placeholder="URL"
                     />
                 </div>
-                
-            </div>
 
+            </div>
 
       <div className="flex justify-between items-center mx-3 shadow-2xl rounded-xl p-3 my-4">
         <div className="flex items-center">
           <div className="flex items-center">
             <img src={Frame3} alt="icon" />
           </div>
-          <div className="text-lg text-[black] font-semibold mx-2">
-            <p>Date & Time</p>
+          <div >
+            <p className="text-lg text-[black] font-semibold mx-2">Date & Time</p>
           </div>
         </div>
         <div className="flex items-center">
@@ -70,9 +69,9 @@ function AddSchedule() {
             <div className="flex items-center">
               <img src={Frame2} alt="icon" />
             </div>
-            <div className="text-lg text-[black] font-semibold mx-2">
-              <p>Date & Time</p>
-            </div>
+            <div >
+            <p className="text-lg text-[black] font-semibold mx-2">Location</p>
+          </div>
           </div>
           <div className="flex items-center">
             <label className="relative inline-flex items-center cursor-pointer">
@@ -86,9 +85,9 @@ function AddSchedule() {
             <div className="flex items-center">
               <img src={Frame1} alt="icon" />
             </div>
-            <div className="text-lg text-[black] font-semibold mx-2">
-              <p>Date & Time</p>
-            </div>
+            <div >
+            <p className="text-lg text-[black] font-semibold mx-2">Phone</p>
+          </div>
           </div>
           <div className="flex items-center">
             <label className="relative inline-flex items-center cursor-pointer">
@@ -97,7 +96,7 @@ function AddSchedule() {
               </label>
           </div>
         </div>
-        
+
       </div>
 
       <div className="flex justify-between items-center mx-3 shadow-2xl rounded-xl p-3 my-4">
@@ -105,8 +104,8 @@ function AddSchedule() {
           <div className="flex items-center">
             <img src={Frame} alt="icon" />
           </div>
-          <div className="text-lg text-[black] font-semibold mx-2">
-            <p>Date & Time</p>
+          <div >
+            <p className="text-lg text-[black] font-semibold mx-2">Invite Friends</p>
           </div>
         </div>
         <div className="flex items-center">
@@ -121,3 +120,7 @@ function AddSchedule() {
 }
 
 export default AddSchedule;
+
+
+
+
