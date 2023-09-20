@@ -99,7 +99,7 @@ function Friends() {
           return (
             <div
               className="flex gap-5 items-center p-2"
-              key={friend.id}
+              key={friend._id}
               onClick={() => handleNavigate(friend._id)}
             >
               <div>

@@ -52,6 +52,9 @@ import ShareLocation from "./components/ShareLocation/ShareLocation";
 import InviteFriends from "./components/InviteFriends/InviteFriends";
 import SelectPeople from "./components/SelectPeople/SelectPeople";
 import AddSchedule from "./components/AddSchedule/AddSchedule";
+import AddToList from './components/AddToList/AddToList';
+import EmptySchedules from './components/EmptySchedules/EmptySchedules';
+import Schedules from './components/Schedules/Schedules';
 function Router() {
   const navigate = useNavigate();
   const [token, setToken] = useState(null);
@@ -250,6 +253,9 @@ function Router() {
         <Route path="/invitefriend" element={<InviteFriends />} />
         <Route path="/selectpeople" element={<SelectPeople />} />
         <Route path="/addschedule" element={<AddSchedule />} />
+        <Route path="/addtolist" element={<AddToList />} />
+        <Route path="/emptySchedule" element={<EmptySchedules />} />
+        <Route path="/schedules" element={<Schedules />} />
         <Route path="*" element={<h1>Not Found</h1>} />
       </Routes>
     </>
