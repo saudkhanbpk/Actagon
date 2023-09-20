@@ -8,8 +8,9 @@ function Search() {
   const [user, setUser] = React.useState(
     JSON.parse(localStorage.getItem("user"))
   );
-  console.log(user)
   const [friends, setFriends] = useState([])
+  const [searchQuery, setSearchQuery] = useState("");
+  const [filteredFriends, setFilteredFriends] = useState([]);
   const getUser = () => {
     getUsers({
       userId: user?._id
@@ -32,6 +33,13 @@ function Search() {
     })
   }
 
+  useEffect(() => {
+    const filtered = friends.filter((friend) =>
+      friend.firstName.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+    setFilteredFriends(filtered);
+  }, [searchQuery, friends]);
+
   return (
     <div className="min-h-screen flex flex-col mt-2 ">
       <p className="text-textColorBlack text-center text-lg font-semibold leading-5">
@@ -51,7 +59,8 @@ function Search() {
               placeholder="Search"
               className="flex p-3 w-[243px] h-[37px]    items-center bg-transparent	"
               style={{ background: "transparent", outline: "none" }}
-            />
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)} />
           </div>
         </div>
         <div>
@@ -63,7 +72,7 @@ function Search() {
           Suggestions
         </h5>
       </div>
-      {friends?.map((friend) => {
+      {filteredFriends?.map((friend) => {
         return (
 
           <div className="flex gap-5 items-center p-2" key={friend._id}>

@@ -46,7 +46,12 @@ import SlipPayment from "./components/Payments/SlipPayment/SlipPayment";
 import DateSelSchedul from "./components/Payments/DateSelSchedul/DateSelSchedul";
 import GroupChat from "./components/GroupChat/GroupChat";
 import { io } from "socket.io-client";
-
+import Location from "./components/Location/Location";
+import ShareNavigation from "./components/ShareNavigation/ShareNavigation";
+import ShareLocation from "./components/ShareLocation/ShareLocation";
+import InviteFriends from "./components/InviteFriends/InviteFriends";
+import SelectPeople from "./components/SelectPeople/SelectPeople";
+import AddSchedule from "./components/AddSchedule/AddSchedule";
 function Router() {
   const navigate = useNavigate();
   const [token, setToken] = useState(null);
@@ -231,15 +236,20 @@ function Router() {
         />
 
         <Route path="/addCard" element={<AddCard />} />
-        <Route path="/pay" element={<Pay />} />
+        <Route path="/pay" element={<Pay user={user} />} />
         <Route path="/amountToPay" element={<AmountToPay />} />
-        <Route path="/request" element={<Request />} />
+        <Route path="/request" element={<Request user={user} />} />
         <Route path="/amountToRequest" element={<AmountToRequset />} />
         <Route path="/splitPayment" element={<SplitPayment />} />
         <Route path="/splitAmount" element={<SplitAmount />} />
         <Route path="/slipPayment" element={<SlipPayment />} />
         <Route path="/dateSchedule" element={<DateSelSchedul />} />
         <Route path="/group" element={<GroupChat />} />
+        <Route path="/location" element={<Location />} />
+        <Route path="/sharelocation" element={<ShareLocation />} />
+        <Route path="/invitefriend" element={<InviteFriends />} />
+        <Route path="/selectpeople" element={<SelectPeople />} />
+        <Route path="/addschedule" element={<AddSchedule />} />
         <Route path="*" element={<h1>Not Found</h1>} />
       </Routes>
     </>

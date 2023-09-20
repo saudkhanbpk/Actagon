@@ -6,6 +6,8 @@ import { getFriends } from "../../service/Auth";
 function Friends() {
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")))
   const [friends, setFriends] = useState([]);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [filteredFriends, setFilteredFriends] = useState([]);
 
   const get = () => {
     getFriends({ userId: user._id })
@@ -22,9 +24,13 @@ function Friends() {
     get();
   }, []);
 
-
+  useEffect(() => {
+    const filtered = friends?.filter((friend) =>
+      friend.firstName.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+    setFilteredFriends(filtered);
+  }, [searchQuery, friends]);
   const navigate = useNavigate();
-  // const friends = [
   //   {
   //     id: "1",
   //     name: "Imran Khan",
@@ -74,6 +80,8 @@ function Friends() {
                 type="text"
                 placeholder="Search"
                 className="flex p-3 w-[243px] h-[37px]    items-center bg-transparent	"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
                 style={{ background: "transparent", outline: "none" }}
               />
             </div>
@@ -87,8 +95,7 @@ function Friends() {
             {friends.length} Friends
           </h5>
         </div>
-        {friends.map((friend) => {
-          console.log("frined", friend)
+        {filteredFriends?.map((friend) => {
           return (
             <div
               className="flex gap-5 items-center p-2"
