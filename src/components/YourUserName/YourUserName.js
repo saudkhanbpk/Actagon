@@ -1,7 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { MdOutlineArrowBackIosNew } from "react-icons/md";
 import { Link } from "react-router-dom";
-function YouUserName() {
+function YouUserName({ setStep, step, username, setUserName, firstName }) {
+
+    // const generateUserName = () => {
+    //     const random = Math.floor(Math.random() * 1000000);
+    //     const userName = firstName + random;
+    //     setUserName(userName);
+    // }
+    // useEffect(() => {
+    //     generateUserName();
+    // }, [])
+
 
     return (
         <>
@@ -42,6 +52,17 @@ function YouUserName() {
                             </button>
                         </Link>
                     </div>
+                </div>
+                <div className="">
+                    {/* <Link to=''> */}
+                    <button
+                        onClick={() => setStep(step + 1)}
+                        className="w-full bg-blueButtonColor text-[white] font-bold py-2 px-4 rounded-lg focus:outline-none focus:shadow-outline-blue transition duration-300 ease-in-out"
+                        type="submit"
+                    >
+                        Next
+                    </button>
+                    {/* </Link> */}
                 </div>
             </div>
         </>

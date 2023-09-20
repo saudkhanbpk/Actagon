@@ -2,7 +2,8 @@ import React from "react";
 import backButton from "./../../assets/Back Button.png";
 import defaultProfile from "../../assets/Frame 427321648.png";
 import cameraIcon from "./../../assets/Frame 427321659.png";
-function Profile() {
+import BottomNavigation from "../bottomNavigation/BottomNavigation";
+function Profile({ user, setUser }) {
   return (
     <>
       <div
@@ -34,7 +35,7 @@ function Profile() {
           <input type="file" className="hidden" id="file" />
           <label htmlFor="file" className="cursor-pointer">
             <img
-              src={defaultProfile}
+              src={user?.profile_img ? user?.profile_img : defaultProfile}
               alt="defaultProfile"
               className="rounded-full   object-cover w-40 h-40 no-repeat bg-cover"
             />
@@ -47,7 +48,7 @@ function Profile() {
         </div>
         <label htmlFor="file" className="cursor-pointer">
           <p className="mt-5 mb-3 text-center text-textColorBlack text-base leading-6 font-semibold">
-            Imran khan
+            {`${user?.firstName} ${user?.lastName}`}
           </p>
         </label>
         <div
@@ -60,7 +61,7 @@ function Profile() {
             First name
           </p>
           <p className="px-16 text-blueButtonColor text-base font-normal leading-5">
-            imrankhan
+            {user?.firstName}
           </p>
         </div>
         <div
@@ -73,7 +74,7 @@ function Profile() {
             Last name
           </p>
           <p className="px-16 text-blueButtonColor text-base font-normal leading-5">
-            khan
+            {user?.lastName}
           </p>
         </div>
         <div
@@ -90,6 +91,7 @@ function Profile() {
           </p>
         </div>
       </div>
+      {/* <BottomNavigation /> */}
     </>
   );
 }

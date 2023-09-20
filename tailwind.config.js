@@ -8,7 +8,8 @@ module.exports = {
       textColorBlack: '#000000',
       textInputBackgroundColor: "rgba(118, 118, 128, 0.12)",
       blueButtonColor: "#3478F6",
-      accountBorderRadius: "12px 12px 0px 0px;"
+      accountBorderRadius: "12px 12px 0px 0px;",
+      viewProfileBoxColor: "rgba(118, 118, 128, 0.12)"
     },
     // fontFamily: {
     //   : ['SF Pro']
@@ -17,7 +18,11 @@ module.exports = {
     // fontFamily: {
     //   'sf': ['SF Pro']
     // },
-    extend: {},
+    extend: {
+      // backgroundImage: {
+      //   "viewProfile": "url('./src/assets/viewprofile.png')",
+      // }
+    },
   },
   plugins: [],
 }
