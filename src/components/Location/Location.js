@@ -3,6 +3,7 @@ import searchIcon from "./../../assets/search_icon.png";
 import mic from "./../../assets/Clear Glyph.png";
 import { Link } from 'react-router-dom'; 
 import {MdOutlineArrowBackIosNew} from 'react-icons/md'
+import ShareNavigation from '../ShareNavigation/ShareNavigation';
 function Location() {
     const friends = [
         {
@@ -88,6 +89,7 @@ function Location() {
                     </div>
                 );
             })}
+            <ShareNavigation />
         </div>
     )
 }

@@ -156,6 +156,7 @@ const GroupChat = () => {
 
               </div>
             </Link>
+            <Link to='/location'>
             <div className="mx-2 flex items-center justify-center flex-col">
               <img
                 src={location}
@@ -164,6 +165,7 @@ const GroupChat = () => {
               />
               <p className="text-[#817F80] text-sm">location</p>
             </div>
+            </Link>
           </div>
 
           <div className="flex mt-4 w-full justify-between ">
@@ -180,6 +182,8 @@ const GroupChat = () => {
               />
               <p className="text-[#817F80] text-sm">friends</p>
             </div>
+            
+            <Link to='/emptyschedule'>
             <div className="mx-2 flex items-center justify-center flex-col">
               <img
                 src={schedule}
@@ -188,6 +192,7 @@ const GroupChat = () => {
               />
               <p className="text-[#817F80] text-sm">shecdule</p>
             </div>
+            </Link>
             <div className="mx-2 flex items-center justify-center flex-col">
               <img src={docs} alt="Send Icon" className="w-[60px] h-[60px]" />
               <p className="text-[#817F80] text-sm">docs</p>

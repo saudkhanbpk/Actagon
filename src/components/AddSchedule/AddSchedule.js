@@ -46,7 +46,7 @@ function AddSchedule() {
         </Link>
       </div>
 
-      <div className="px-1 pb-4 rounded-xl shadow-2xl md:w-96 mt-3 mx-3">
+      <div className="px-1 pb-4 rounded-xl shadow-2xl mt-3 mx-3">
         <div className="pt-2">
           <input
             type="text"
@@ -199,3 +199,4 @@ function AddSchedule() {
 }
 
 export default AddSchedule;
+
