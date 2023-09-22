@@ -5,6 +5,9 @@ import friends from "./../../assets/friends_icon.png";
 import blueFriends from "./../../assets/bluefriends.png";
 import blueshare from "./../../assets/blueshare.png";
 import { useNavigate } from "react-router";
+import Location from "../Location/Location";
+import ShareLocation from "../ShareLocation/ShareLocation";
+import Friends from "../friends/Friends";
 
 function ShareNavigation() {
   const navigate = useNavigate();
@@ -72,9 +75,9 @@ function ShareNavigation() {
           </p>
         </div>
       </div>
-      {/* {active === 1 && <Friends />}
-      {active === 2 && <Search />}
-      {active === 3 && <Profile />} */}
+      {active === 1 && <Friends />}
+      {active === 2 && <ShareLocation />}
+      {/* {active === 3 && <Profile />} */}
     </>
   );
 }

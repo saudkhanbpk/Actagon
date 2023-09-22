@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { AiFillCheckCircle } from 'react-icons/ai';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function NewMessages() {
   // State to manage selected chats
@@ -51,12 +51,14 @@ function NewMessages() {
   const filteredFriends = friends.filter((friend) =>
     friend.name.toLowerCase().includes(searchInput.toLowerCase())
   );
+  const navigate = useNavigate() 
+    
 
   return (
     <div className="min-h-screen flex flex-col mt-2">
       {/* Header */}
       <div className="flex justify-between px-2 items-center">
-        <p className="text-blueButtonColor text-center text-lg font-semibold leading-5">
+        <p onClick={()=>navigate(-1)} className="text-blueButtonColor text-center text-lg font-semibold leading-5">
           Cancel
         </p>
         <p className="text-textColorBlack text-center text-lg font-weight-[500] leading-5 font-sf">
