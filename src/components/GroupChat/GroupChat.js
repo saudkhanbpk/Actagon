@@ -156,14 +156,16 @@ const GroupChat = () => {
 
               </div>
             </Link>
-            <div className="mx-2 flex items-center justify-center flex-col">
-              <img
-                src={location}
-                alt="Send Icon"
-                className="w-[60px] h-[60px]"
-              />
-              <p className="text-[#817F80] text-sm">location</p>
-            </div>
+            <Link to="/share">
+              <div className="mx-2 flex items-center justify-center flex-col">
+                <img
+                  src={location}
+                  alt="Send Icon"
+                  className="w-[60px] h-[60px]"
+                />
+                <p className="text-[#817F80] text-sm">location</p>
+              </div>
+            </Link>
           </div>
 
           <div className="flex mt-4 w-full justify-between ">
