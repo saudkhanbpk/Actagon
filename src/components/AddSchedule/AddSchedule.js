@@ -180,7 +180,7 @@ function AddSchedule() {
         </button>
       </div>
 
-      <div className="px-1 pb-4 rounded-xl shadow-2xl md:w-96 mt-3 mx-3">
+      <div className="px-1 pb-4 rounded-xl shadow-2xl mt-3 mx-3">
         <div className="pt-2">
           <div
             style={{ borderBottom: "1px solid #C6C6C8" }}
@@ -356,3 +356,4 @@ function AddSchedule() {
 }
 
 export default AddSchedule;
+

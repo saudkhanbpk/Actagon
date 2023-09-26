@@ -1,17 +1,18 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import calender from "./../../assets/calender.png";
+import dots from "./../../assets/dots.png";
+import up from "./../../assets/up.png";
 import backButton from "./../../assets/Back Button (1).png";
 import { useNavigate } from "react-router-dom";
 import voiceCall from "./../../assets/voicecall.png";
 import videoCall from "./../../assets/videocall.png";
 import message from "./../../assets/message.png";
-import payment from "./../../assets/payment1.png";
+import events from "./../../assets/events.png";
 import {IoIosTime} from 'react-icons/io'
 import {PiUserCircleFill} from 'react-icons/pi'
 import {FaInfo} from 'react-icons/fa'
 
-function ProfileView() {
+function SchedulePeople() {
   const navigate = useNavigate();
   return (
     <>
@@ -21,8 +22,14 @@ function ProfileView() {
           <div className="flex items-center ml-4 cursor-pointer">
             <img src={backButton} alt="back" onClick={() => navigate(-1)} />
           </div>
-          <div className="flex items-center mr-4 cursor-pointer">
-            <img src={calender} alt="setting" />
+          <div className="flex items-center mr-1 cursor-pointer">
+            <div className="items-center w-8 h-8 p-1 mx-2 rounded-full " style={{  backgroundColor:'rgba(60, 60, 67, 0.30)'}}>
+            <img src={up} alt="3 dots"  className="mx-1"/>
+            </div>
+            <div className="items-center w-8 h-8 pt-[13px] rounded-full " style={{  backgroundColor:'rgba(60, 60, 67, 0.30)'}}>
+            <img src={dots} alt="3 dots" className="mx-2"/>
+
+            </div>
           </div>
         </div>
         
@@ -72,10 +79,25 @@ function ProfileView() {
           </div>
           <div className="flex flex-col bg-viewProfileBoxColor first-letter:
         rounded-xl p-[2px] h-[70px] w-[80px] justify-center items-center cursor-pointer">
-            <img src={payment} alt="" className="flex items-center mx-auto" />
+            <img src={events} alt="" className="flex items-center mx-auto" />
             <p className="text-blueButtonColor text-sm leading-normal font-semibold mt-1">Payment</p>
           </div>
         </div>
+      </div> 
+      
+    <div className="items-center flex mt-24">
+        <div className="mx-2 bg-[lightgray] rounded-lg p-1"><IoIosTime className="w-6 h-6"/></div>
+        <div><p className="font-semibold">Monday Feb 12, 2023 12:40 PM</p></div>
+      </div> 
+
+      <div className="items-center flex mt-2">
+        <div className="mx-2 bg-[lightgray] rounded-lg p-1"><FaInfo className="w-6 h-6"/></div>
+        <div><p className="font-semibold">Council meeting</p></div>
+      </div> 
+
+      <div className="items-center flex mt-2">
+        <div className="mx-2 bg-[lightgray] rounded-lg p-1"><PiUserCircleFill className="w-6 h-6"/></div>
+        <div><p className="font-semibold">Created by You</p></div>
       </div> 
 
     </div>
@@ -85,4 +107,4 @@ function ProfileView() {
   );
 }
 
-export default ProfileView;
+export default SchedulePeople;
