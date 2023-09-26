@@ -162,16 +162,18 @@ function AddSchedule() {
           <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
         </>
       )}
-      <div className="flex items-center bg-blue-500 text-white mt-2 px-2">
+      <div className="border-[red] bg-[#F2F2F6] h-full">
+
+      <div className="flex items-center bg-[transparent] text-white px-2">
         <Link to="">
           <h2 className="text-blueButtonColor py-2 flex items-center font-medium text-base">
             <MdOutlineArrowBackIosNew />
             <span className="ml-1">Back</span>
           </h2>
         </Link>
-        <h3 className="text-xl pl-1 font-medium text-center  mx-auto">
+        <h4 className="text-xl pl-1 font-medium text-center  mx-auto">
           Add Schedule
-        </h3>
+        </h4>
         <button
           onClick={handleAddSchedule}
           className="text-blueButtonColor text-white font-semibold rounded-full w-10 h-10 flex items-center  justify-end"
@@ -180,34 +182,33 @@ function AddSchedule() {
         </button>
       </div>
 
-      <div className="px-1 pb-4 rounded-xl shadow-2xl mt-3 mx-3">
-        <div className="pt-2">
+      <div className="p-1 rounded-xl bg-[white] shadow-2xl mt-3 mx-3 ">
           <div
             style={{ borderBottom: "1px solid #C6C6C8" }}
-            className="w-full py-2 px-2 border-none focus:border-transparent focus:outline-none font-normal text-[#000] text-base rounded-t-md border-gray-300"
+            className="w-full py-2 px-2 bg-[white] focus:border-transparent focus:outline-none font-medium text-[#000] text-base rounded-t-md border-gray-300"
             placeholder="Title"
           >
             <p>Title</p>
           </div>
-        </div>
+        
         <div className="">
           <input
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             type="text"
             className="w-full py-2 px-2 border-none focus:border-transparent focus:outline-none font-normal text-[#000] text-base "
-            placeholder="Enter title here"
+            placeholder="URL"
           />
         </div>
       </div>
 
-      <div className="shadow-2xl mx-3 rounded-xl p-3 my-4">
-        <div className="flex justify-between items-center ">
+      <div className="shadow-2xl mx-3 rounded-xl bg-[white] p-3 my-4">
+        <div className="flex justify-between bg-[white] items-center ">
           <div className="flex items-center">
             <div className="flex items-center">
               <img src={Frame3} alt="icon" />
             </div>
-            <div className="text-lg text-[black] font-semibold mx-2">
+            <div className=" text-[black] font-medium mx-2">
               <p>Date & Time</p>
             </div>
           </div>
@@ -219,7 +220,10 @@ function AddSchedule() {
                 className="sr-only peer"
                 onChange={toggleCalendar}
               />
-              <div className="w-11 h-6 bg-[lightgray] peer-focus:outline-none  rounded-full peer dark:bg-[lightgray] peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-[gray] after:border after:rounded-full after:bg-[white] after:h-5 after:w-5 after:transition-all dark:border-[gray] peer-checked:bg-[green]" />
+              <div className="w-11 h-6 border-[red]  peer-focus:outline-none  rounded-full peer dark:bg-[lightgray]
+               peer-checked:after:translate-x-full peer-checked:after:border-[white] after:content-[''] 
+               after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-[gray] after:border
+                after:rounded-full after:bg-[white] after:h-5 after:w-5 after:transition-all " />
             </label>
           </div>
         </div>
@@ -247,13 +251,13 @@ function AddSchedule() {
         )}
       </div>
 
-      <div className=" rounded-xl mx-3 shadow-2xl">
-        <div className="flex justify-between items-center border-b-[1px]   p-3">
+      <div className=" rounded-xl mx-3 bg-[white] shadow-2xl">
+        <div className="flex justify-between items-center border-b-[1px] border-[lightgray]   p-3">
           <div className="flex items-center">
             <div className="flex items-center">
               <img src={Frame2} alt="icon" />
             </div>
-            <div className="text-lg text-[black] font-semibold mx-2">
+            <div className="text-base text-[black] font-medium mx-2">
               <p>Location</p>
               {isLocationVisible && (
                 <div>
@@ -281,7 +285,7 @@ function AddSchedule() {
             <div className="flex items-center">
               <img src={Frame1} alt="icon" />
             </div>
-            <div className="text-lg text-[black] font-semibold mx-2">
+            <div className="text-base text-[black] font-medium mx-2">
               <p>Phone Call</p>
               {isPhoneCall && (
                 <div>
@@ -306,12 +310,12 @@ function AddSchedule() {
         </div>
       </div>
 
-      <div className="flex justify-between items-center mx-3 shadow-2xl rounded-xl p-3 my-4">
+      <div className="flex justify-between bg-[white] items-center mx-3 shadow-2xl rounded-xl p-3 my-4">
         <div className="flex items-center">
           <div className="flex items-center">
             <img src={Frame} alt="icon" />
           </div>
-          <div className="text-lg text-[black] font-semibold mx-2">
+          <div className="text-base text-[black] font-medium mx-2">
             <p>{isPeople ? "Invite people" : "People"}</p>
             {isPeople && (
               <div>
@@ -334,9 +338,11 @@ function AddSchedule() {
           </label>
         </div>
       </div>
+      </div>
+
 
       {isPeople && (
-        <div className="flex justify-start mx-3 items-center">
+        <div className="flex justify-start mx-3 bg-[white] items-center">
           <div className="mx-1">
             <img src={people} alt="chat" className="w-10 h-10" />
           </div>
@@ -356,4 +362,3 @@ function AddSchedule() {
 }
 
 export default AddSchedule;
-
