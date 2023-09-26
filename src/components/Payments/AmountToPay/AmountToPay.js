@@ -11,7 +11,7 @@ const AmountToPay = () => {
   console.log("state in amount :>> ", state.friend);
 
   const makePayment = async () => {
-    const stripe = await loadStripe("pk_test_51LkMoWArkpbHU2Aqsysx3PvF62kq6xYcv04OObH2ouLMtHIo0oDXRuLi69U9A5m7k9SJmeIxCprtljxhWF39rinZ00rkIH2kk7");
+    const stripe = await loadStripe(process.env.REACT_APP_STRIPE_KEY);
 
     const body = {
       amount: amount * 100,

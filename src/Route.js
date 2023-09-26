@@ -55,6 +55,8 @@ import AddSchedule from "./components/AddSchedule/AddSchedule";
 import AddToList from './components/AddToList/AddToList';
 import EmptySchedules from './components/EmptySchedules/EmptySchedules';
 import Schedules from './components/Schedules/Schedules';
+import DateTimeSel from "./components/DateTimeSel/DateTimeSel";
+import NewList from "./components/NewList/NewList";
 function Router() {
   const navigate = useNavigate();
   const [token, setToken] = useState(null);
@@ -256,6 +258,8 @@ function Router() {
         <Route path="/addtolist" element={<AddToList />} />
         <Route path="/emptySchedule" element={<EmptySchedules />} />
         <Route path="/schedules" element={<Schedules />} />
+        <Route path="/dateTimesel" element={<DateTimeSel />} />
+        <Route path="/newList" element={<NewList />} />
         <Route path="*" element={<h1>Not Found</h1>} />
       </Routes>
     </>

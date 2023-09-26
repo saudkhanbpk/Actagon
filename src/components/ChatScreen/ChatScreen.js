@@ -49,7 +49,7 @@ const ChatScreen = ({
     if (userLocation) {
       const shareLink = `https://maps.google.com/?q=${userLocation.latitude},${userLocation.longitude}`;
       setShareableLink(shareLink);
-      setMessage(shareLink)
+      setMessage(shareLink);
       setIsSharing(true);
       setShowModal(false);
       console.log(shareLink);
@@ -58,8 +58,6 @@ const ChatScreen = ({
       //   sendMessage();
       // },2000);
     }
-
-
   };
   const navigate = useNavigate();
   return (
@@ -100,7 +98,6 @@ const ChatScreen = ({
       <div className="bg-white overflow-y-auto rounded-md px-3 py-3 oxs:h-auto  h-[650px] mt-5">
         {messages.messages?.length > 0
           ? messages?.messages.map((item, index) => {
-            console.log("item :>> ", item);
             return (
               <div key={index} className="flex flex-col space-y-1">
                 {item?.user?.id === user?._id ? (
@@ -142,13 +139,8 @@ const ChatScreen = ({
       </div>
 
       <div className="flex justify-center items-center mb-2">
-        <div className="m-2">
-          <img
-            src={gallery}
-            alt="Gallery Icon"
-            className="w-10 h-8"
-            onClick={() => setShowGallery(!showGallery)}
-          />
+        <div className="m-2" onClick={() => setShowGallery(!showGallery)}>
+          <img src={gallery} alt="Gallery Icon" className="w-10 h-8" />
         </div>
 
         <div className="relative rounded-lg w-full mr-1">
@@ -222,14 +214,16 @@ const ChatScreen = ({
               />
               <p className="text-[#817F80] text-sm">friends</p>
             </div>
-            <div className="mx-2 flex items-center justify-center flex-col">
-              <img
-                src={schedule}
-                alt="Send Icon"
-                className="w-[60px] h-[60px]"
-              />
-              <p className="text-[#817F80] text-sm">shecdule</p>
-            </div>
+            <Link to="/schedules">
+              <div className="mx-2 flex items-center justify-center flex-col">
+                <img
+                  src={schedule}
+                  alt="Send Icon"
+                  className="w-[60px] h-[60px]"
+                />
+                <p className="text-[#817F80] text-sm">Calendar</p>
+              </div>
+            </Link>
             <div className="mx-2 flex items-center justify-center flex-col">
               <img src={docs} alt="Send Icon" className="w-[60px] h-[60px]" />
               <p className="text-[#817F80] text-sm">docs</p>
