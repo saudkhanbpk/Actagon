@@ -57,6 +57,7 @@ import EmptySchedules from './components/EmptySchedules/EmptySchedules';
 import Schedules from './components/Schedules/Schedules';
 import DateTimeSel from "./components/DateTimeSel/DateTimeSel";
 import NewList from "./components/NewList/NewList";
+import SchedulePeople from "./components/SchedulePeople/SchedulePeople";
 function Router() {
   const navigate = useNavigate();
   const [token, setToken] = useState(null);
@@ -200,7 +201,7 @@ function Router() {
         )}
         {/* <Route path="/" element={<Logo />} />
         <Route path="/home" element={<BottomNavigation />} /> */}
-        {/* <Route path="/signup" element={<Signup />} /> */}
+        <Route path="/share" element={<ShareNavigation />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         {/* <Route path="/phone" element={<Phonelogin />} /> */}
@@ -260,6 +261,7 @@ function Router() {
         <Route path="/schedules" element={<Schedules />} />
         <Route path="/dateTimesel" element={<DateTimeSel />} />
         <Route path="/newList" element={<NewList />} />
+        <Route path="/schedulepeople" element={<SchedulePeople />} />
         <Route path="*" element={<h1>Not Found</h1>} />
       </Routes>
     </>

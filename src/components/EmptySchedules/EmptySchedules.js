@@ -8,7 +8,7 @@ const EmptySchedules = () => {
     <div>
       <div className="flex items-center justify-center mt-2 px-4  border-b-[1px] border-gray-200">
         <h1 className="text-xl pl-12 font-medium text-center  mx-auto">Events</h1>
-        <Link to='/'>
+        <Link to='/addschedule'>
           <button className="bg-blue-500  text-white rounded-full w-10 h-10 flex items-center font-[20px] justify-end">
             <img src={plus} alt='plus icon' />
           </button>
