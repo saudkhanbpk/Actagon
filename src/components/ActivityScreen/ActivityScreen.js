@@ -1,9 +1,10 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { MdOutlineArrowBackIosNew } from "react-icons/md";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function ActivityScreen() {
+  const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState("media");
 
   const handleTabClick = (tab) => {
@@ -13,12 +14,12 @@ function ActivityScreen() {
   return (
     <div className="min-h-screen flex flex-col justify-center items-center bg-gray-100">
       <div className="flex  w-full items-center bg-blue-500 text-white mt-2 px-2">
-        <Link to="">
+        <div onClick={() => navigate(-1)}>
           <h2 className="text-blueButtonColor py-2 flex items-center font-medium text-base">
             <MdOutlineArrowBackIosNew />
             <span className="ml-1">Back</span>
           </h2>
-        </Link>
+        </div>
         <h3 className="text-xl text-[#000] text-[17px] font-[590]     mx-auto leading-[22px] justify-center">
           Activities{" "}
         </h3>
