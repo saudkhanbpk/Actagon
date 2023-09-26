@@ -201,19 +201,23 @@ const ChatScreen = ({
           </div>
 
           <div className="flex mt-4 w-full justify-between ">
-            <div className="mx-2 flex items-center justify-center flex-col">
-              <img src={media} alt="Send Icon" className="w-[60px] h-[60px]" />
-              <p className="text-[#817F80] text-sm">Media</p>
-            </div>
+            <Link to="/activity" >
+              <div className="mx-2 flex items-center justify-center flex-col">
+                <img src={media} alt="Send Icon" className="w-[60px] h-[60px]" />
+                <p className="text-[#817F80] text-sm">Media</p>
+              </div>
+            </Link>
+            <Link to="/">
 
-            <div className="mx-2 flex items-center justify-center flex-col">
-              <img
-                src={friends}
-                alt="Send Icon"
-                className="w-[60px] h-[60px]"
-              />
-              <p className="text-[#817F80] text-sm">friends</p>
-            </div>
+              <div className="mx-2 flex items-center justify-center flex-col">
+                <img
+                  src={friends}
+                  alt="Send Icon"
+                  className="w-[60px] h-[60px]"
+                />
+                <p className="text-[#817F80] text-sm">friends</p>
+              </div>
+            </Link>
             <Link to="/schedules">
               <div className="mx-2 flex items-center justify-center flex-col">
                 <img
