@@ -201,7 +201,7 @@ function Router() {
         )}
         {/* <Route path="/" element={<Logo />} />
         <Route path="/home" element={<BottomNavigation />} /> */}
-        {/* <Route path="/signup" element={<Signup />} /> */}
+        <Route path="/share" element={<ShareNavigation />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         {/* <Route path="/phone" element={<Phonelogin />} /> */}

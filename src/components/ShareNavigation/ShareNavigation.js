@@ -13,33 +13,29 @@ function ShareNavigation() {
   const navigate = useNavigate();
   const [active, setActive] = React.useState(1);
 
-  const handleNavigate = (id) => {
-    switch (id) {
-      case 1:
-        navigate("/location");
-        setActive(1);
-        break;
-      case 2:
-        navigate("/search");
-        setActive(2);
-        break;
-      case 3:
-        navigate("/sharelocation");
-        setActive(3);
-        break;
-      default:
-        navigate("/location");
-        setActive(1);
-        break;
-    }
-  };
+  // const handleNavigate = (id) => {
+  //   switch (id) {
+  //     case 1:
+  //       navigate("/location");
+  //       setActive(1);
+  //       break;
+  //     case 2:
+  //       navigate("/sharelocation");
+  //       setActive(2);
+  //       break;
+  //     default:
+  //       navigate("/location");
+  //       setActive(1);
+  //       break;
+  //   }
+  // };
 
   return (
     <>
-      <div className="fixed bottom-0 left-0 right-0 bg-white h-16 flex justify-around items-center  border-t">
+      <div className="fixed z-50 bottom-0 left-0 right-0 bg-white h-16 flex justify-around items-center  border-t bg-[white]">
         <div
           className="flex flex-col items-center"
-          onClick={() => handleNavigate(1)}
+          onClick={() => setActive(1)}
         >
           {active === 1 ? (
             <img src={blueFriends} alt="profile" />
@@ -48,27 +44,27 @@ function ShareNavigation() {
           )}
           <p
             className={`${active === 1
-                ? "text-blueButtonColor text-center text-xs font-medium leading-normal"
-                : "text-textColorBlack text-center text-xs font-medium leading-normal"
+              ? "text-blueButtonColor text-center text-xs font-medium leading-normal"
+              : "text-textColorBlack text-center text-xs font-medium leading-normal"
               }`}
           >
             Friends
           </p>
         </div>
-        
+
         <div
           className="flex flex-col items-center"
-          onClick={() => handleNavigate(3)}
+          onClick={() => setActive(2)}
         >
-          {active === 3 ? (
+          {active === 2 ? (
             <img src={blueshare} alt="profile" />
           ) : (
             <img src={share} alt="profile" />
           )}
           <p
-            className={`${active === 3
-                ? "text-blueButtonColor text-center text-xs font-medium leading-normal"
-                : "text-textColorBlack text-center text-xs font-medium leading-normal"
+            className={`${active === 2
+              ? "text-blueButtonColor text-center text-xs font-medium leading-normal"
+              : "text-textColorBlack text-center text-xs font-medium leading-normal"
               }`}
           >
             Sharing
