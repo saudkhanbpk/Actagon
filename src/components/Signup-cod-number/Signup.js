@@ -11,20 +11,13 @@ function SignupCode({ setStep, step, verifyPhoneOtp, code, setCode }) {
   return (
     <div className="min-h-screen flex justify-center items-center mt-2">
       <div className="p-4 rounded-lg w-full max-w-md">
-        {/* Heading */}
-        <h2 className="text-center line-height: 1.25rem font-medium mb-8">
-          Enter the Code we just texted You
-        </h2>
+
         <div className="min-h-screen flex justify-center items-center mt-2">
           <div className="p-4 rounded-lg w-full max-w-md">
 
-            <h2 className="text-center text-lg font-medium mb-8">
+            <h2 className="text-center text-base font-medium mb-8">
               Enter the code we just texted You
             </h2>
-
-
-
-            {/* OTP Input */}
             <div className="mb-4 border-none">
               <input
                 type="number"
@@ -36,6 +29,33 @@ function SignupCode({ setStep, step, verifyPhoneOtp, code, setCode }) {
                 style={{ color: "#888" }}
               />
             </div>
+            {/* <div className="mb-3 border-none ">
+          <OtpInput
+            value={code}
+            onChange={(e) => setCode(e.target.value)}
+            // renderSeparator={<span> </span>}
+            containerStyle={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              height: "40px",
+              background: "lightgray",
+              color: "#888",
+              // border: '1px solid',
+              borderRadius: "14px", // Add this line to round the input border
+            }}
+            inputStyle={{
+              color: "#888",
+              background: "transparent",
+              fontSize: "30px", // Use fontSize to make the dots larger
+              border: "none", // Remove the border on the input
+              outline: "none", // Remove the input outline
+              padding:'4px'
+            }}
+            placeholder="●●●●●●"
+            
+          />
+        </div> */}
             <div className="text-center">
               <p className="text-sm text-[#C5C5C6]">
                 Didn't get it?{" "}
