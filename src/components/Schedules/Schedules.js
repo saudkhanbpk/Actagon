@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import plus from "../../assets/plus.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Rectangle from "../../assets/Framegal.png";
 import fotbal from "../../assets/fotbal.png";
 import game from "../../assets/game.png";
@@ -10,6 +10,7 @@ import coffee from "../../assets/coffee.png";
 import { startOfWeek, endOfWeek } from "date-fns";
 import { IoIosArrowForward } from "react-icons/io";
 import { getSchedule } from "../../service/Auth";
+import { MdOutlineArrowBackIosNew } from "react-icons/md";
 const cards = [
     {
         img: Rectangle,
@@ -37,6 +38,7 @@ const cards = [
 ];
 
 const Schedules = () => {
+    const navigate = useNavigate();
     const [cards, setCards] = useState([]);
     const [value, onChange] = useState(new Date());
     const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")));
@@ -57,7 +59,11 @@ const Schedules = () => {
 
     return (
         <div>
-            <div className="flex items-center justify-center mt-2 px-4  border-b-[1px] border-gray-200">
+            <div className="flex items-center bg-[transparent] text-white px-2">
+                <h2 onClick={() => navigate(-1)} className="text-blueButtonColor py-2 flex items-center font-medium text-base">
+                    <MdOutlineArrowBackIosNew />
+                    <span className="ml-1">Back</span>
+                </h2>
                 <h1 className="text-xl pl-12 font-medium text-center  mx-auto">
                     Events
                 </h1>
@@ -66,6 +72,9 @@ const Schedules = () => {
                         <img src={plus} alt="plus icon" />
                     </button>
                 </Link>
+            </div>
+            <div className="flex items-center justify-center mt-2 px-4  border-b-[1px] border-gray-200">
+
             </div>
 
             <div className="px-3">

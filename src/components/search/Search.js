@@ -34,8 +34,8 @@ function Search() {
   }
 
   useEffect(() => {
-    const filtered = friends.filter((friend) =>
-      friend.firstName.toLowerCase().includes(searchQuery.toLowerCase())
+    const filtered = friends?.filter((friend) =>
+      friend?.firstName?.toLowerCase().includes(searchQuery.toLowerCase())
     );
     setFilteredFriends(filtered);
   }, [searchQuery, friends]);
