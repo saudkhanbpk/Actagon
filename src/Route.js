@@ -58,6 +58,7 @@ import Schedules from './components/Schedules/Schedules';
 import DateTimeSel from "./components/DateTimeSel/DateTimeSel";
 import NewList from "./components/NewList/NewList";
 import SchedulePeople from "./components/SchedulePeople/SchedulePeople";
+import EventsSearch from "./components/eventsSearch/EventsSearch";
 function Router() {
   const navigate = useNavigate();
   const [token, setToken] = useState(null);
@@ -204,6 +205,7 @@ function Router() {
         <Route path="/share" element={<ShareNavigation />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/events" element={<EventsSearch />} />
         {/* <Route path="/phone" element={<Phonelogin />} /> */}
         {/* <Route path="/text" element={<Textcode />} /> */}
         {/* <Route path="/signup-code" element={<SignupCode />} /> */}
