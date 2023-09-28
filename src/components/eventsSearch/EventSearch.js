@@ -19,6 +19,8 @@ function EventSearch() {
   const [userLocation, setUserLocation] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
   const [searchedLocation, setSearchedLocation] = useState(null);
+  const [data, setData] = useState({});
+  const [restaurantData, setRestaurantData] = useState([]);
   const [showModal, setShowModal] = React.useState(false);
 
   const { isLoaded } = useJsApiLoader({
@@ -49,35 +51,39 @@ function EventSearch() {
 
   const handleSearch = () => {
     const apiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
-    const geocodeEndpoint = `https://maps.googleapis.com/maps/api/geocode/json?address=${searchQuery}&key=${apiKey}`;
+    const geocodeEndpoint = `https://maps.googleapis.com/maps/api/place/textsearch/json?query=${searchQuery}&key=${apiKey}`;
 
     fetch(geocodeEndpoint)
       .then((response) => response.json())
       .then((data) => {
         if (data.results.length > 0) {
-          const { lat, lng } = data.results[0].geometry.location;
-          const location = { latitude: lat, longitude: lng };
-          setSearchedLocation({ latitude: lat, longitude: lng });
-          fetchPlaceDetails(location, apiKey);
-          setTimeout(() => {
-            setShowModal(true)
-          }, 5000)
+          const restaurantLocations = data.results.map((result) => ({
+            latitude: result.geometry.location.lat,
+            longitude: result.geometry.location.lng,
+          }));
+
+          restaurantLocations.forEach((location, index) => {
+            fetchPlaceDetails(location, apiKey, index);
+            setShowModal(true);
+          });
         }
       })
       .catch((error) => {
-        console.error("Error fetching geocoding data:", error);
+        console.error("Error fetching textsearch data:", error);
       });
   };
 
-  const fetchPlaceDetails = (location, apiKey) => {
-    const placesEndpoint = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${location.latitude},${location.longitude}&radius=1000&key=${apiKey}`;
+  console.log("stat data", restaurantData.slice(0, 20))
+
+  const fetchPlaceDetails = (location, apiKey, index) => {
+    const placesEndpoint = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${location.latitude},${location.longitude}&radius=1000&type=restaurant&key=${apiKey}`;
 
     axios
       .get(placesEndpoint)
       .then((response) => {
         if (response.data.results.length > 0) {
           const placeId = response.data.results[0].place_id;
-          fetchPlaceDetailsById(placeId, apiKey);
+          fetchPlaceDetailsById(placeId, apiKey, index);
         }
       })
       .catch((error) => {
@@ -85,20 +91,23 @@ function EventSearch() {
       });
   };
 
-  const fetchPlaceDetailsById = (placeId, apiKey) => {
+  const fetchPlaceDetailsById = (placeId, apiKey, index) => {
     const placeDetailsEndpoint = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&key=${apiKey}`;
 
     axios
       .get(placeDetailsEndpoint)
       .then((response) => {
         if (response.data.result) {
-          console.log("Place Details:", response.data.result);
+          console.log(`Place Details for Restaurant ${index + 1}:`, response.data.result);
+
+          setRestaurantData((prevData) => [...prevData, response.data.result]);
         }
       })
       .catch((error) => {
         console.error("Error fetching place details:", error);
       });
   };
+
 
   useEffect(() => {
     handleSearch();
@@ -118,8 +127,8 @@ function EventSearch() {
     }
   }, []);
 
-  return isLoaded ? (
-    <>
+  return (
+    <div>
       <div className=" flex flex-col  bg-gray-100">
         <div className="flex  w-full items-center bg-blue-500 text-white mt-2 px-2">
           <div onClick={() => navigate(-1)}>
@@ -157,6 +166,9 @@ function EventSearch() {
             <img src={mic} alt="" />
           </div>
         </div>
+        {
+          isLoaded ? 
+        
         <div className="mt-2">
           <GoogleMap
             mapContainerStyle={containerStyle}
@@ -179,7 +191,8 @@ function EventSearch() {
               />
             )}
           </GoogleMap>
-        </div>
+        </div> : null
+        }
       </div>
       {showModal ? (
         <>
@@ -267,14 +280,15 @@ function EventSearch() {
                 </div>
               </div>
             </div>
-          </div>
-          <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
-        </>
-      ) : null}
-    </>
-  ) : (
-    <></>
-  );
-}
+            <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
+ </div>
+ </>
+      ) : null 
+      }
+      </div>
+      
+  )
+    }
+
 
 export default EventSearch;
