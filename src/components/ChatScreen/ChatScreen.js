@@ -63,7 +63,7 @@ const ChatScreen = ({
   return (
     <div className=" flex flex-col bg-gray-100">
       {/* Header */}
-      <div className="flex items-center justify-between px-4 bg-white ">
+      <div className="flex items-center justify-between px-4 bg-white">
         <button className="text-blue-500" onClick={() => navigate(-1)}>
           {/* Back button */}
           <MdOutlineArrowBackIosNew
