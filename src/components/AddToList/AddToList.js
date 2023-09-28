@@ -12,6 +12,7 @@ function AddToList() {
     { id: 1, isClicked: false },
     { id: 2, isClicked: false },
     { id: 3, isClicked: false },
+    { id: 4, isClicked: false },
     // Add more items as needed
   ]);
 
@@ -115,7 +116,7 @@ function AddToList() {
                 </div>
               ))}
 
-              <div className="mt-2">
+              {/* <div className="mt-2">
                 <div className="flex">
                   <div className="w-full">
                     <img
@@ -152,7 +153,7 @@ function AddToList() {
                   <p className="font-semibold">List name</p>
 
                 </div>
-                {/* <div>
+                <div>
                   <p className="text-sm text-[gray]">Shared With</p>
                   <div>
                     <div className="flex justify-start mt-1  items-center">
@@ -161,13 +162,13 @@ function AddToList() {
 
                     </div>
                     </div>
-                </div> */}
-              </div>
+                </div>
+              </div> */}
             </div>
           </div>
-          {/* <div className="mt-10  ">
+          <div className="mt-10  ">
             <button className="btn bottom-0 bg-blueButtonColor rounded-lg py-2 w-full text-[white] font-semibold">Done</button>
-          </div> */}
+          </div>
         </main>
       </div>
     </>
