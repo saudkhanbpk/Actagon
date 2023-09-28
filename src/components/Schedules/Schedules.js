@@ -43,6 +43,7 @@ const Schedules = () => {
     const [value, onChange] = useState(new Date());
     const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")));
 
+
     const handleGet = async () => {
 
     };
@@ -56,6 +57,8 @@ const Schedules = () => {
                 console.log("error:", error);
             });
     }, [value]);
+
+
 
     return (
         <div>
@@ -82,8 +85,9 @@ const Schedules = () => {
                     Friday June 12, 2023
                 </p>
             </div>
-            <div className="flex flex-col px-1">
-                <Calendar onChange={onChange} value={value} />
+            <div className="flex flex-col px-1 overflow-x-auto">
+                <Calendar onChange={onChange} value={value}
+                />
             </div>
 
             <div className="px-3">
@@ -136,3 +140,9 @@ const Schedules = () => {
 };
 
 export default Schedules;
+
+
+
+
+
+

@@ -1,10 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { MdOutlineArrowBackIosNew } from "react-icons/md";
+import resturent from "../../assets/resturent.png";
 import { useNavigate } from "react-router-dom";
 import searchIcon from "./../../assets/search_icon.png";
 import mic from "./../../assets/Clear Glyph.png";
 import { Marker, GoogleMap, useJsApiLoader } from "@react-google-maps/api";
 import axios from "axios";
+import colorStar from "./../../assets/starcolor.png";
+import Slider from 'react-slick';
+import voiceCall from "./../../assets/voicecall.png";
+import events from "./../../assets/events.png";
+import friends from "./../../assets/bluefriends.png";
+import direction from "./../../assets/direction.png";
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 function EventSearch() {
   const navigate = useNavigate();
   const [userLocation, setUserLocation] = useState(null);
@@ -20,6 +29,24 @@ function EventSearch() {
   const containerStyle = {
     width: "100%",
     height: "80vh",
+  };
+
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToScroll: 1,
+          slidesToShow: 2.5,
+          arrows: false,
+        },
+      },
+    ],
   };
 
   const handleSearch = () => {
@@ -101,7 +128,7 @@ function EventSearch() {
   }, []);
 
   return (
-    <>
+    <div>
       <div className=" flex flex-col  bg-gray-100">
         <div className="flex  w-full items-center bg-blue-500 text-white mt-2 px-2">
           <div onClick={() => navigate(-1)}>
@@ -139,87 +166,129 @@ function EventSearch() {
             <img src={mic} alt="" />
           </div>
         </div>
-        {isLoaded ?
-          <div className="mt-2">
-            <GoogleMap
-              mapContainerStyle={containerStyle}
-              center={
-                searchedLocation
-                  ? {
-                    lat: searchedLocation.latitude,
-                    lng: searchedLocation.longitude,
-                  }
-                  : { lat: userLocation?.latitude, lng: userLocation?.longitude }
-              }
-              zoom={15}
-            >
-              {searchedLocation && (
-                <Marker
-                  position={{
-                    lat: searchedLocation.latitude,
-                    lng: searchedLocation.longitude,
-                  }}
-                />
-              )}
-            </GoogleMap>
-          </div>
-
-          : null
+        {
+          isLoaded ? 
+        
+        <div className="mt-2">
+          <GoogleMap
+            mapContainerStyle={containerStyle}
+            center={
+              searchedLocation
+                ? {
+                  lat: searchedLocation.latitude,
+                  lng: searchedLocation.longitude,
+                }
+                : { lat: userLocation?.latitude, lng: userLocation?.longitude }
+            }
+            zoom={15}
+          >
+            {searchedLocation && (
+              <Marker
+                position={{
+                  lat: searchedLocation.latitude,
+                  lng: searchedLocation.longitude,
+                }}
+              />
+            )}
+          </GoogleMap>
+        </div> : null
         }
-        {showModal ? (
-          <>
-            <div
-              className="  justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
-            >
-              <div className="h-[80vh] overflow-y-scroll relative w-auto my-6 mx-auto max-w-3xl">
-                <div className="borer-t-2 rounded-lg shadow-lg relative bottom-0 flex flex-col w-full bg-[white] outline-none focus:outline-none">
-                  {/*body*/}
-                  <div className="relative p-6 flex-auto">
-                    {/* {
-                      restaurantData?.map((data) => {
-                        return (
-                          <div className="flex justify-between items-center">
-                            <div className="flex items-center">
-                              <div className="flex flex-col">
-                                <h1 className="text-[#000] text-[17px] font-[590] leading-[22px]">
-                                  {data?.name}
-                                </h1>
-                                <p className="text-[#000] text-[14px] font-[400] leading-[17px]">
-                                  {data?.formatted_address}
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                        )
-                      })
-                    } */}
+      </div>
+      {showModal ? (
+        <>
+          <div
+            className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
+          >
+            <div className="relative w-full my-6 mx-auto max-w-3xl">
+              {/*content*/}
+              <div className=" rounded-lg shadow-lg relative flex flex-col w-full bg-[white] outline-none focus:outline-none">
+                {/*body*/}
+
+                <div className="mt-5 px-2">
+                  <Slider {...settings}>
+                    <div>
+                      <img src={resturent} alt="Image 1" className="w-full h-auto mx-2" />
+                    </div>
+                    <div>
+                      <img src={resturent} alt="Image 2" className="w-full h-auto mx-2" />
+                    </div>
+                    <div>
+                      <img src={resturent} alt="Image 1" className="w-full h-auto mx-2" />
+                    </div>
+                    <div>
+                      <img src={resturent} alt="Image 2" className="w-full h-auto mx-2" />
+                    </div>
+                  </Slider>
+                  <div>
+                    <h2 className="font-medium text-textColorBlack text-xl">Taj Restaurant</h2>
+                    <div className="flex items-center gap-1">
+                      <p className="font-semibold text-[#817F80]">5.0</p>
+                      <img src={colorStar} />
+                      <img src={colorStar} />
+                      <img src={colorStar} />
+                      <img src={colorStar} />
+                      <img src={colorStar} />
+                      <p className="font-semibold text-[#817F80]">(236)</p>
+                    </div>
+                    <div className="items-center flex">
+                      <div className="text-[#817F80]"><p className="font-semibold">Restaurant $10-20 02 mil</p></div>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <p className="font-semibold text-[#63BF84]">Open</p>
+                      <p className="font-semibold">8:00 AM - 11:00 PM</p>
+                    </div>
+
+                    <div className="flex justify-around gap-[5px] mt-5">
+                      <div className="flex flex-col bg-viewProfileBoxColor first-letter:
+        rounded-xl p-[2px] h-[70px] w-[80px]  justify-center items-center cursor-pointer">
+                        <img src={voiceCall} alt="" className="flex items-center mx-auto" />
+                        <p className="text-blueButtonColor text-sm leading-normal font-semibold mt-1">Call</p>
+                      </div>
+                      <div className="flex flex-col bg-viewProfileBoxColor first-letter:
+        rounded-xl p-[2px] h-[70px] w-[80px]  justify-center items-center cursor-pointer">
+                        <img src={events} alt="" className="flex items-center mx-auto" />
+                        <p className="text-blueButtonColor text-sm mt-1 leading-normal font-semibold ">Event</p>
+                      </div>
+                      <div className="flex flex-col bg-viewProfileBoxColor first-letter:
+        rounded-xl p-[2px] h-[70px] w-[80px]  justify-center items-center cursor-pointer">
+                        <img src={friends} alt="" className="flex items-center mx-auto" />
+                        <p className="text-blueButtonColor text-sm leading-normal font-semibold mt-1">Invite</p>
+                      </div>
+                      <div className="flex flex-col bg-viewProfileBoxColor first-letter:
+        rounded-xl p-[2px] h-[70px] w-[80px] justify-center items-center cursor-pointer">
+                        <img src={direction} alt="" className="flex items-center mx-auto" />
+                        <p className="text-blueButtonColor text-sm leading-normal font-semibold mt-1">Direction</p>
+                      </div>
+                    </div>
                   </div>
-                  {/*footer*/}
-                  <div className="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b">
-                    <button
-                      className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                      type="button"
-                      onClick={() => setShowModal(false)}
-                    >
-                      Close
-                    </button>
-                    <button
-                      className="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                      type="button"
-                      onClick={() => setShowModal(false)}
-                    >
-                      Save Changes
-                    </button>
-                  </div>
+                </div>
+                <div className="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b">
+                  <button
+                    className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                    type="button"
+                    onClick={() => setShowModal(false)}
+                  >
+                    Close
+                  </button>
+                  <button
+                    className="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                    type="button"
+                    onClick={() => setShowModal(false)}
+                  >
+                    Save Changes
+                  </button>
                 </div>
               </div>
             </div>
             <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
-          </>
-        ) : null}
+ </div>
+ </>
+      ) : null 
+      }
       </div>
-    </>
-  );
-}
+      
+  )
+    }
+
 
 export default EventSearch;
