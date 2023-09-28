@@ -59,6 +59,7 @@ import DateTimeSel from "./components/DateTimeSel/DateTimeSel";
 import NewList from "./components/NewList/NewList";
 import SchedulePeople from "./components/SchedulePeople/SchedulePeople";
 import EventsSearch from "./components/eventsSearch/EventsSearch";
+import SearchResturentDetails from "./components/SearchResturentDetails/SearchResturentDetails";
 function Router() {
   const navigate = useNavigate();
   const [token, setToken] = useState(null);
@@ -264,6 +265,7 @@ function Router() {
         <Route path="/dateTimesel" element={<DateTimeSel />} />
         <Route path="/newList" element={<NewList />} />
         <Route path="/schedulepeople" element={<SchedulePeople />} />
+        <Route path="/searchResturent" element={<SearchResturentDetails />} />
         <Route path="*" element={<h1>Not Found</h1>} />
       </Routes>
     </>

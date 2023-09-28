@@ -20,7 +20,7 @@ function Signup({ setStep, step, handlePhoneAuth, number, setNumber }) {
         </h2>
       </Link>
 
-      <div className="min-h-screen mt-20">
+      <div className="min-h-screen ">
         <div className="p-4 rounded-lg w-full max-w-md">
           <h2 className="text-center text-2xl font-20 mb-20">
             Let’s get you signed up!
