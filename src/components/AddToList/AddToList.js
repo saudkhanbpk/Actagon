@@ -95,7 +95,7 @@ function AddToList() {
                       ></button>
                     </div>
                   </div>
-                  <div>
+                  {/* <div>
                     <p className="text-sm text-[gray]">Shared With</p>
                     <div>
                       <div className="flex justify-start mt-1 items-center">
@@ -111,7 +111,7 @@ function AddToList() {
 
 
                       </div></div>
-                  </div>
+                  </div> */}
                 </div>
               ))}
 
@@ -152,22 +152,22 @@ function AddToList() {
                   <p className="font-semibold">List name</p>
 
                 </div>
-                <div>
+                {/* <div>
                   <p className="text-sm text-[gray]">Shared With</p>
                   <div>
                     <div className="flex justify-start mt-1  items-center">
-
+                    
                       <MdPersonAdd className="w-7 h-7 rounded-full bg-[lightgray] p-1" />
 
-
-                    </div></div>
-                </div>
+                    </div>
+                    </div>
+                </div> */}
               </div>
             </div>
           </div>
-          <div className="mt-10  ">
+          {/* <div className="mt-10  ">
             <button className="btn bottom-0 bg-blueButtonColor rounded-lg py-2 w-full text-[white] font-semibold">Done</button>
-          </div>
+          </div> */}
         </main>
       </div>
     </>
