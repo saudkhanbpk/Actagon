@@ -1,19 +1,20 @@
 import React, { useState, useEffect } from "react";
 import { MdOutlineArrowBackIosNew } from "react-icons/md";
 import resturent from "../../assets/resturent.png";
+import Modal from 'react-bootstrap/Modal'
 import { useNavigate } from "react-router-dom";
 import searchIcon from "./../../assets/search_icon.png";
 import mic from "./../../assets/Clear Glyph.png";
 import { Marker, GoogleMap, useJsApiLoader } from "@react-google-maps/api";
 import axios from "axios";
 import colorStar from "./../../assets/starcolor.png";
-import Slider from 'react-slick';
+import Slider from "react-slick";
 import voiceCall from "./../../assets/voicecall.png";
 import events from "./../../assets/events.png";
 import friends from "./../../assets/bluefriends.png";
 import direction from "./../../assets/direction.png";
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 function EventSearch() {
   const navigate = useNavigate();
   const [userLocation, setUserLocation] = useState(null);
@@ -37,16 +38,9 @@ function EventSearch() {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    responsive: [
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToScroll: 1,
-          slidesToShow: 2.5,
-          arrows: false,
-        },
-      },
-    ],
+    responsive: [{
+
+    }]
   };
 
   const handleSearch = () => {
@@ -64,7 +58,9 @@ function EventSearch() {
 
           restaurantLocations.forEach((location, index) => {
             fetchPlaceDetails(location, apiKey, index);
-            setShowModal(true);
+            setTimeout(() => {
+              setShowModal(true);
+            }, 5000);
           });
         }
       })
@@ -73,7 +69,7 @@ function EventSearch() {
       });
   };
 
-  console.log("stat data", restaurantData.slice(0, 20))
+  console.log("stat data", restaurantData);
 
   const fetchPlaceDetails = (location, apiKey, index) => {
     const placesEndpoint = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${location.latitude},${location.longitude}&radius=1000&type=restaurant&key=${apiKey}`;
@@ -98,16 +94,18 @@ function EventSearch() {
       .get(placeDetailsEndpoint)
       .then((response) => {
         if (response.data.result) {
-          console.log(`Place Details for Restaurant ${index + 1}:`, response.data.result);
+          console.log(
+            `Place Details for Restaurant ${index + 1}:`,
+            response.data.result
+          );
 
-          setRestaurantData((prevData) => [...prevData, response.data.result]);
+          setRestaurantData((prevData) => [...prevData, response.data.result].slice(-5));
         }
       })
       .catch((error) => {
         console.error("Error fetching place details:", error);
       });
   };
-
 
   useEffect(() => {
     handleSearch();
@@ -126,6 +124,38 @@ function EventSearch() {
       console.log("Geolocation is not available in this browser.");
     }
   }, []);
+
+  const getImages = (photoReference) => {
+    const apiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
+
+    const photoUrl = `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${photoReference}&key=${apiKey}`;
+    return photoUrl
+  }
+
+  const getPlaceById = (placeId) => {
+    console.log(placeId)
+    console.log("cliekd")
+    const apiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
+
+    const requestUrl = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&key=${apiKey}`;
+    fetch(requestUrl)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("places", data)
+        if (data.status === 'OK') {
+          const placeDetails = data.result;
+          console.log('Place Details:', placeDetails);
+          navigate(`/searchResturent`, { state: placeDetails })
+          setShowModal(false)
+        } else {
+          console.error('Error fetching place details:', data.status);
+        }
+      })
+      .catch((error) => {
+        console.error('Error fetching place details:', error);
+      });
+  }
+
 
   return (
     <div>
@@ -166,129 +196,174 @@ function EventSearch() {
             <img src={mic} alt="" />
           </div>
         </div>
-        {
-          isLoaded ? 
-        
-        <div className="mt-2">
-          <GoogleMap
-            mapContainerStyle={containerStyle}
-            center={
-              searchedLocation
-                ? {
-                  lat: searchedLocation.latitude,
-                  lng: searchedLocation.longitude,
-                }
-                : { lat: userLocation?.latitude, lng: userLocation?.longitude }
-            }
-            zoom={15}
-          >
-            {searchedLocation && (
-              <Marker
-                position={{
-                  lat: searchedLocation.latitude,
-                  lng: searchedLocation.longitude,
-                }}
-              />
-            )}
-          </GoogleMap>
-        </div> : null
-        }
+        {isLoaded ? (
+          <div className="mt-2">
+            <GoogleMap
+              mapContainerStyle={containerStyle}
+              center={
+                searchedLocation
+                  ? {
+                    lat: searchedLocation.latitude,
+                    lng: searchedLocation.longitude,
+                  }
+                  : {
+                    lat: userLocation?.latitude,
+                    lng: userLocation?.longitude,
+                  }
+              }
+              zoom={15}
+            >
+              {searchedLocation && (
+                <Marker
+                  position={{
+                    lat: searchedLocation.latitude,
+                    lng: searchedLocation.longitude,
+                  }}
+                />
+              )}
+            </GoogleMap>
+          </div>
+        ) : null}
       </div>
-      {showModal ? (
-        <>
-          <div
-            className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
-          >
-            <div className="relative w-full my-6 mx-auto max-w-3xl">
-              {/*content*/}
-              <div className=" rounded-lg shadow-lg relative flex flex-col w-full bg-[white] outline-none focus:outline-none">
-                {/*body*/}
 
-                <div className="mt-5 px-2">
-                  <Slider {...settings}>
-                    <div>
-                      <img src={resturent} alt="Image 1" className="w-full h-auto mx-2" />
-                    </div>
-                    <div>
-                      <img src={resturent} alt="Image 2" className="w-full h-auto mx-2" />
-                    </div>
-                    <div>
-                      <img src={resturent} alt="Image 1" className="w-full h-auto mx-2" />
-                    </div>
-                    <div>
-                      <img src={resturent} alt="Image 2" className="w-full h-auto mx-2" />
-                    </div>
-                  </Slider>
-                  <div>
-                    <h2 className="font-medium text-textColorBlack text-xl">Taj Restaurant</h2>
-                    <div className="flex items-center gap-1">
-                      <p className="font-semibold text-[#817F80]">5.0</p>
-                      <img src={colorStar} />
-                      <img src={colorStar} />
-                      <img src={colorStar} />
-                      <img src={colorStar} />
-                      <img src={colorStar} />
-                      <p className="font-semibold text-[#817F80]">(236)</p>
-                    </div>
-                    <div className="items-center flex">
-                      <div className="text-[#817F80]"><p className="font-semibold">Restaurant $10-20 02 mil</p></div>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <p className="font-semibold text-[#63BF84]">Open</p>
-                      <p className="font-semibold">8:00 AM - 11:00 PM</p>
-                    </div>
 
-                    <div className="flex justify-around gap-[5px] mt-5">
-                      <div className="flex flex-col bg-viewProfileBoxColor first-letter:
-        rounded-xl p-[2px] h-[70px] w-[80px]  justify-center items-center cursor-pointer">
-                        <img src={voiceCall} alt="" className="flex items-center mx-auto" />
-                        <p className="text-blueButtonColor text-sm leading-normal font-semibold mt-1">Call</p>
-                      </div>
-                      <div className="flex flex-col bg-viewProfileBoxColor first-letter:
-        rounded-xl p-[2px] h-[70px] w-[80px]  justify-center items-center cursor-pointer">
-                        <img src={events} alt="" className="flex items-center mx-auto" />
-                        <p className="text-blueButtonColor text-sm mt-1 leading-normal font-semibold ">Event</p>
-                      </div>
-                      <div className="flex flex-col bg-viewProfileBoxColor first-letter:
-        rounded-xl p-[2px] h-[70px] w-[80px]  justify-center items-center cursor-pointer">
-                        <img src={friends} alt="" className="flex items-center mx-auto" />
-                        <p className="text-blueButtonColor text-sm leading-normal font-semibold mt-1">Invite</p>
-                      </div>
-                      <div className="flex flex-col bg-viewProfileBoxColor first-letter:
-        rounded-xl p-[2px] h-[70px] w-[80px] justify-center items-center cursor-pointer">
-                        <img src={direction} alt="" className="flex items-center mx-auto" />
-                        <p className="text-blueButtonColor text-sm leading-normal font-semibold mt-1">Direction</p>
-                      </div>
+      <Modal
+        size="lg"
+        show={showModal}
+        onHide={() => setShowModal(false)}
+        aria-labelledby="example-modal-sizes-title-lg"
+      >
+        <Modal.Header closeButton>
+          <Modal.Title id="example-modal-sizes-title-lg">
+            Large Modal
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <MapData restaurantData={restaurantData} getPlaceById={getPlaceById} getImages={getImages} settings={settings} />
+
+        </Modal.Body>
+      </Modal>
+
+    </div>
+  );
+}
+
+export default EventSearch;
+
+
+const MapData = ({ restaurantData, getPlaceById, getImages, settings }) => {
+
+  return (
+
+    <>
+      {restaurantData.map((item, index) => {
+        return (
+          <div className="mt-5 px-2" key={index} >
+            <Slider {...settings}>
+              {
+                item?.photos?.map((photo) => {
+                  return (
+                    <div onClick={() => getPlaceById(item?.place_id
+                    )}>
+                      <img
+
+                        src={getImages(photo.photo_reference)}
+                        alt="Image 1"
+                        className="w-[100%] h-[300px]  mx-2"
+                      />
                     </div>
-                  </div>
+                  )
+                })
+              }
+            </Slider>
+            <div>
+              <h2 className="font-medium text-textColorBlack text-xl">
+                {item.name}
+              </h2>
+              <div className="flex items-center gap-1">
+                <p className="font-semibold text-[#817F80]">5.0</p>
+                <img src={colorStar} />
+                <img src={colorStar} />
+                <img src={colorStar} />
+                <img src={colorStar} />
+                <img src={colorStar} />
+                <p className="font-semibold text-[#817F80]">(236)</p>
+              </div>
+              <div className="items-center flex">
+                <div className="text-[#817F80]">
+                  <p className="font-semibold">
+                    Restaurant $10-20 02 mil
+                  </p>
                 </div>
-                <div className="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b">
-                  <button
-                    className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                    type="button"
-                    onClick={() => setShowModal(false)}
+              </div>
+              <div className="flex items-center gap-1">
+                <p className="font-semibold text-[#63BF84]">Open</p>
+                <p className="font-semibold">8:00 AM - 11:00 PM</p>
+              </div>
+
+              <div className="flex justify-around gap-[5px] mt-5">
+                <a href={item?.international_phone_number
+                }>
+                  <div
+                    className="flex flex-col bg-viewProfileBoxColor first-letter:
+            rounded-xl p-[2px] h-[70px] w-[80px]  justify-center items-center cursor-pointer"
                   >
-                    Close
-                  </button>
-                  <button
-                    className="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                    type="button"
-                    onClick={() => setShowModal(false)}
-                  >
-                    Save Changes
-                  </button>
+                    <img
+                      src={voiceCall}
+                      alt=""
+                      className="flex items-center mx-auto"
+                    />
+
+                    <p className="text-blueButtonColor text-sm leading-normal font-semibold mt-1">
+                      Call
+                    </p>
+                  </div>
+                </a>
+                <div
+                  className="flex flex-col bg-viewProfileBoxColor first-letter:
+            rounded-xl p-[2px] h-[70px] w-[80px]  justify-center items-center cursor-pointer"
+                >
+                  <img
+                    src={events}
+                    alt=""
+                    className="flex items-center mx-auto"
+                  />
+                  <p className="text-blueButtonColor text-sm mt-1 leading-normal font-semibold ">
+                    Event
+                  </p>
+                </div>
+                <div
+                  className="flex flex-col bg-viewProfileBoxColor first-letter:
+            rounded-xl p-[2px] h-[70px] w-[80px]  justify-center items-center cursor-pointer"
+                >
+                  <img
+                    src={friends}
+                    alt=""
+                    className="flex items-center mx-auto"
+                  />
+                  <p className="text-blueButtonColor text-sm leading-normal font-semibold mt-1">
+                    Invite
+                  </p>
+                </div>
+                <div
+                  className="flex flex-col bg-viewProfileBoxColor first-letter:
+            rounded-xl p-[2px] h-[70px] w-[80px] justify-center items-center cursor-pointer"
+                >
+                  <img
+                    src={direction}
+                    alt=""
+                    className="flex items-center mx-auto"
+                  />
+                  <p className="text-blueButtonColor text-sm leading-normal font-semibold mt-1">
+                    Direction
+                  </p>
                 </div>
               </div>
             </div>
-            <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
- </div>
- </>
-      ) : null 
-      }
-      </div>
-      
+          </div>
+        );
+      })}
+    </>
   )
-    }
 
-
-export default EventSearch;
+}
