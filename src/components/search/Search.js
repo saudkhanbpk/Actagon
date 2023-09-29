@@ -46,7 +46,7 @@ function Search() {
         Search
       </p>
       <div
-        className="flex justify-between items-center   mt-5 rounded-xl p-2 !ml-2 !mr-2"
+        className="flex justify-between items-center   mt-2 rounded-xl p-2 !ml-2 !mr-2"
         style={{ background: "rgba(118, 118, 128, 0.12)" }}
       >
         <div className="flex gap-1 items-center">
@@ -67,7 +67,7 @@ function Search() {
           <img src={mic} alt="" />
         </div>
       </div>
-      <div className="flex  self-start">
+      <div className="flex mt-2 mx-2 self-start">
         <h5 className="text-textColorBlack text-base font-semibold leading-5 p-2">
           Suggestions
         </h5>
@@ -75,19 +75,19 @@ function Search() {
       {filteredFriends?.map((friend) => {
         return (
 
-          <div className="flex gap-5 items-center p-2" key={friend._id}>
+          <div className="flex gap-2 items-center mx-2 px-1 py-2" key={friend._id}>
             <div>
               <img
                 src={friend.profile_img}
                 alt=""
-                className="rounded-full   object-cover w-[60px] h-[60px] no-repeat "
+                className="rounded-full   object-cover w-[50px] h-[50px] no-repeat "
               />
             </div>
-            <div>
-              <p className="text-textColorBlack text-lg font-normal leading-5">
+            <div className=''>
+              <p className="text-textColorBlack mb-1 text-lg font-normal leading-5">
                 {friend.firstName}
               </p>
-              <p className="text-[#817F80] text-sm font-normal leading-5">
+              <p className="text-[#817F80] text-sm font-normal mb-1 leading-5">
                 @username
               </p>
             </div>

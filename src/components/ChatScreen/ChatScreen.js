@@ -63,7 +63,7 @@ const ChatScreen = ({
   return (
     <div className=" flex flex-col bg-gray-100">
       {/* Header */}
-      <div className="flex items-center justify-between px-4 bg-white">
+      <div className="flex items-center justify-between px-2 bg-white">
         <button className="text-blue-500" onClick={() => navigate(-1)}>
           {/* Back button */}
           <MdOutlineArrowBackIosNew
@@ -71,13 +71,13 @@ const ChatScreen = ({
           />
         </button>
 
-        <div className="flex flex-col items-center justify-center ml-2 mt-1">
+        <div className="flex flex-col items-center justify-center ml-2 mt-2">
           <img
             src={receiver?.profile_img}
             alt="User"
             className="w[44px] h-[44px]   rounded-full"
           />
-          <p className="font-normal font-400 line-height-[22px]">
+          <p className="font-normal font-400 mb-1 line-height-[22px]">
             {receiver?.fullName}
           </p>
         </div>
@@ -95,16 +95,16 @@ const ChatScreen = ({
       <hr style={{ color: "lightgray" }} />
 
       {/* Chat conversation */}
-      <div className="bg-white overflow-y-auto rounded-md px-3 py-3 oxs:h-auto  h-[650px] mt-5">
+      <div className="bg-white overflow-y-auto rounded-md px-3 py-3 oxs:h-auto mt-3">
         {messages.messages?.length > 0
           ? messages?.messages.map((item, index) => {
             return (
               <div key={index} className="flex flex-col space-y-1">
                 {item?.user?.id === user?._id ? (
-                  <div className=" flex items-center justify-end gap-1">
+                  <div className=" flex items-center justify-end gap-1 mb-2">
                     <div className="flex justify-end items-center gap-1">
-                      <div className="font-sans flex rounded-full min-w-fit-content ml-auto mb-3 bg-[#5540FF] p-2">
-                        <p className="text-[#FFFFFF]  text-sm">
+                      <div className="font-sans flex rounded-full min-w-fit-content ml-auto mb-0 bg-[#5540FF] p-2">
+                        <p className="text-[#FFFFFF] items-center mb-0 text-sm">
                           {item?.message}
                         </p>
                         <div ref={messageRef}></div>
@@ -119,7 +119,7 @@ const ChatScreen = ({
                     </div>
                   </div>
                 ) : (
-                  <div className=" flex items-center gap-1">
+                  <div className=" flex items-center gap-1 mb-2">
                     <div>
                       <img
                         src={receiver?.profile_img}
@@ -127,8 +127,8 @@ const ChatScreen = ({
                         className="h-8 w-8 rounded-full"
                       />
                     </div>
-                    <div className="font-sans rounded-full min-w-fit-content bg-[lightgray] p-2 mb-3">
-                      <p className="text-[#000] text-sm">{item?.message}</p>
+                    <div className="font-sans rounded-full min-w-fit-content bg-[lightgray] p-2 mb-0">
+                      <p className="text-[#000] items-center mb-0  text-sm">{item?.message}</p>
                     </div>
                   </div>
                 )}
@@ -164,7 +164,7 @@ const ChatScreen = ({
       {!showGallery && (
         <div className="bg-white h-[50%] justify-center border-top rounded-xl bg-[lightgray] p-2">
           <div className="flex mt-4 w-full justify-between ">
-            <Link to="/paymentsEmpty">
+            <Link to="/paymentsEmpty" style={{ textDecoration: 'none' }}>
               <div className="mx-2 flex items-center justify-center flex-col">
                 <img
                   src={dollar}
@@ -178,7 +178,7 @@ const ChatScreen = ({
               <img src={search} alt="Send Icon" className="w-[60px] h-[60px]" />
               <p className="text-[#817F80] text-sm">Search</p>
             </div>
-            <Link to="/poll">
+            <Link to="/poll" style={{ textDecoration: 'none' }}>
               <div className="mx-2 flex items-center justify-center flex-col">
                 <img src={poll} alt="Send Icon" className="w-[60px] h-[60px]" />
                 <p className="text-[#817F80] text-sm">Poll</p>
@@ -201,13 +201,13 @@ const ChatScreen = ({
           </div>
 
           <div className="flex mt-4 w-full justify-between ">
-            <Link to="/activity" >
+            <Link to="/activity" style={{ textDecoration: 'none' }}>
               <div className="mx-2 flex items-center justify-center flex-col">
                 <img src={media} alt="Send Icon" className="w-[60px] h-[60px]" />
                 <p className="text-[#817F80] text-sm">Media</p>
               </div>
             </Link>
-            <Link to="/">
+            <Link to="/" style={{ textDecoration: 'none' }}>
 
               <div className="mx-2 flex items-center justify-center flex-col">
                 <img

@@ -7,20 +7,22 @@ import { MdOutlineArrowBackIosNew } from 'react-icons/md';
 const PaymentsEmpty = () => {
     return (
         <>
+        <div className='scroll-x-0'>
+
             <div className='px-2 pt-2 flex items-center'>
-                <Link to='/group'>
-                    <p className="text-blueButtonColor flex items-center justify-start text-center text-base font-semibold leading-5">
+                <Link to='/group' style={{ textDecoration: 'none' }}>
+                    <p className="text-blueButtonColor flex items-center justify-start mt-1 mb-0 text-center text-base font-semibold leading-5">
                         <MdOutlineArrowBackIosNew className='mr-2' />
                         Back
                     </p>
                 </Link>
-                <p className="text-textColorBlack w-full mr-12 flex justify-center items-center text-center text-lg font-semibold leading-5">
+                <p className="text-textColorBlack w-full mr-12 flex justify-center mt-1 mb-0 items-center text-center text-lg font-semibold leading-5">
                     Wallet
                 </p>
 
             </div>
-            <div className='flex flex-col items-center py-3'>
-                <hr style={{ width: '398px', height: '98px', background: '#FFFFFF' }} />
+            <div className='flex flex-col items-center py-0'>
+                <hr style={{ width: '100%', height: '28px', background: '#FFFFFF' }} />
                 <div className='flex flex-col items-center justify-center mt-20'>
                     <div className='' style={{
                         background: 'rgba(118, 118, 128, 0.12)',
@@ -35,7 +37,7 @@ const PaymentsEmpty = () => {
                         />
                     </div>
 
-                    <Link to='/addCard'>
+                    <Link to='/addCard' style={{ textDecoration: 'none' }}>
                         <div style={{
                         }}>
                             <img
@@ -55,11 +57,13 @@ const PaymentsEmpty = () => {
                             />
                         </div>
                     </Link>
-                    <Link to='/addCard'>
+                    <Link to='/addCard' style={{ textDecoration: 'none' }}>
                         <h2 className='text-blueButtonColor font-medium'>Add Card</h2>
                     </Link>
                 </div>
             </div>
+        </div>
+
         </>
     );
 };

@@ -56,7 +56,7 @@ function Transition() {
     return (
         <>
             <div className='px-4 flex items-center py-2'>
-                <Link to='/addCard'>
+                <Link to='/addCard' style={{ textDecoration: 'none' }}>
                     <p className="text-blueButtonColor items-center  flex justify-start text-center text-base font-semibold leading-5">
                         <MdOutlineArrowBackIosNew />
                         <span className="ml-1">Back</span>
@@ -72,9 +72,9 @@ function Transition() {
                 <div className="flex py-4 gap-1">
                     <button
                         style={{ borderRadius: "12px 0px 0px 12px", color: "#63BF84" }}
-                        className="bg-[#FFFFFF] w-full text-lg flex px-4 items-center font-medium py-3"
+                        className="bg-[#FFFFFF] w-full h-[50px] text-lg flex px-4 items-center font-medium py-3"
                     >
-                        <Link to='/request' className="flex items-center justify-center">
+                        <Link to='/request' style={{ textDecoration: 'none' }} className="flex items-center justify-center">
                             <BiDollar />
                             <FiArrowDownLeft />
                             Request
@@ -82,9 +82,9 @@ function Transition() {
                     </button>
                     <button
                         style={{ borderRadius: "0px 12px 12px 0px", color: "#3478F6" }}
-                        className="bg-[#FFFFFF] w-full text-lg flex px-4 items-center font-medium py-3"
+                        className="bg-[#FFFFFF] w-full h-[50px] text-lg flex px-4 items-center font-medium py-3"
                     >
-                        <Link to='/pay' className="flex items-center justify-center">
+                        <Link to='/pay' className="flex items-center justify-center" style={{ textDecoration: 'none' }}>
                             <BiDollar />
                             <FiArrowUpRight />
                             Pay
@@ -100,12 +100,15 @@ function Transition() {
                 <div className="overflow-y-auto max-h-96" style={{ borderRadius: '12px 12px 0px 0px' }}>
                     {cards.map((items, index) => {
                         return (
-                            <div key={index} className="w-full flex px-3 py-3 bg-[#FFF]" >
+                            <div key={index} className="w-full flex px-2 border-b-[1px] border-[lightgray] py-2 items-center  bg-[#FFF]" >
+                                <div className="">
                                 <img src={items.img} alt="Image" />
-                                <div className="w-full px-2">
+
+                                </div>
+                                <div className="w-full pl-2 pr-0">
                                     <div className="flex w-full text-[#8A9099] items-center text-xs justify-between">
-                                        <div className="text-textColorBlack font-medium text-base">
-                                            <h2>{items.header}</h2>
+                                        <div className="text-textColorBlack mb-0 font-medium text-base">
+                                            <h4 className="mb-0">{items.header}</h4>
                                         </div>
                                         <div className="flex items-center">
                                             <h2 className="font-normal text-textColorBlack text-base">
@@ -117,10 +120,10 @@ function Transition() {
                                         </div>
                                     </div>
                                     <div>
-                                        <p className="text-base font-normal text-[#817F80] leading-4">
+                                        <p className="text-base font-normal text-[#817F80] mb-0 leading-4">
                                             {items.title}
                                         </p>
-                                        <p className="text-base font-normal text-[#817F80] leading-5">
+                                        <p className="text-base font-normal mb-0 text-[#817F80] leading-5">
                                             {items.date}
                                         </p>
                                     </div>
