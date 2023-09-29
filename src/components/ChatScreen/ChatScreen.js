@@ -174,10 +174,13 @@ const ChatScreen = ({
                 <p className="text-[#817F80] text-sm">Payment</p>
               </div>
             </Link>
-            <div className="mx-2 flex items-center justify-center flex-col">
-              <img src={search} alt="Send Icon" className="w-[60px] h-[60px]" />
-              <p className="text-[#817F80] text-sm">Search</p>
-            </div>
+            <Link to="/events">
+              <div className="mx-2 flex items-center justify-center flex-col">
+                <img src={search} alt="Send Icon" className="w-[60px] h-[60px]" />
+                <p className="text-[#817F80] text-sm">Search</p>
+              </div>
+            </Link>
+
             <Link to="/poll">
               <div className="mx-2 flex items-center justify-center flex-col">
                 <img src={poll} alt="Send Icon" className="w-[60px] h-[60px]" />
