@@ -43,7 +43,7 @@ function Pay({ user }) {
     return (
         <div className="min-h-screen flex flex-col mt-2 ">
             <div className='flex justify-between px-2 items-center'>
-                <Link to='/transition'>
+                <Link to='/transition' style={{ textDecoration: 'none' }}>
                     <p className="text-blueButtonColor text-center text-lg font-semibold leading-5">
                         Cancel
                     </p>
@@ -56,7 +56,7 @@ function Pay({ user }) {
                 </Link>
             </div>
             <div
-                className="flex justify-between items-center   mt-5 rounded-xl p-2 !ml-2 !mr-2"
+                className="flex justify-between items-center   mt-3 rounded-xl p-2 !ml-2 !mr-2"
                 style={{ background: "rgba(118, 118, 128, 0.12)" }}
             >
                 <div className="flex gap-1 items-center">
@@ -71,24 +71,24 @@ function Pay({ user }) {
                 </div>
 
             </div>
-            <div className="flex  self-start">
+            <div className="flex mt-2 self-start">
                 <h5 className="text-textColorBlack text-base font-semibold leading-5 p-2">
                     Suggestions
                 </h5>
             </div>
             {friends.map((friend) => {
                 return (
-                    <Link to='/amountToPay' state={
+                    <Link style={{ textDecoration: 'none' }} to='/amountToPay' state={
                         {
                             friend: friend
                         }
                     } >
-                        <div className="flex gap-5 items-center p-2" key={friend.id}>
+                        <div className="flex gap-3 items-center p-2" key={friend.id}>
                             <div>
                                 <img
                                     src={friend.profile_img}
                                     alt="img"
-                                    className="rounded-full   object-cover w-[60px] h-[60px] no-repeat "
+                                    className="rounded-full   object-cover w-[50px] h-[50px] no-repeat "
                                 />
                             </div>
                             <div>

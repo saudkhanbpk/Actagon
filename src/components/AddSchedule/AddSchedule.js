@@ -181,12 +181,12 @@ function AddSchedule() {
             <MdOutlineArrowBackIosNew />
             <span className="ml-1">Back</span>
           </h2>
-          <h4 className="text-xl pl-1 font-medium text-center  mx-auto">
+          <h4 className="text-xl pl-1 font-medium text-center text-[black]  mx-auto">
             Add Schedule
           </h4>
           <button
             onClick={handleAddSchedule}
-            className="text-blueButtonColor text-white font-semibold rounded-full w-10 h-10 flex items-center  justify-end"
+            className="text-blueButtonColor  font-semibold rounded-full flex items-center  justify-end"
           >
             Done
           </button>
@@ -198,7 +198,7 @@ function AddSchedule() {
             className="w-full py-2 px-2 bg-[white] focus:border-transparent focus:outline-none font-medium text-[#000] text-base rounded-t-md border-gray-300"
             placeholder="Title"
           >
-            <p>Title</p>
+            <p className="mb-1">Title</p>
           </div>
 
           <div className="">
@@ -219,7 +219,7 @@ function AddSchedule() {
                 <img src={Frame3} alt="icon" />
               </div>
               <div className=" text-[black] font-medium mx-2">
-                <p>Date & Time</p>
+                <p className="mb-0">Date & Time</p>
               </div>
             </div>
             <div className="flex items-center">
@@ -268,7 +268,7 @@ function AddSchedule() {
                 <img src={Frame2} alt="icon" />
               </div>
               <div className="text-base text-[black] font-medium mx-2">
-                <p>Location</p>
+                <p className="mb-0">Location</p>
                 {isLocationVisible && (
                   <div>
                     <p className="text-[#817F80] text-base font-normal">
@@ -296,7 +296,7 @@ function AddSchedule() {
                 <img src={Frame1} alt="icon" />
               </div>
               <div className="text-base text-[black] font-medium mx-2">
-                <p>Phone Call</p>
+                <p className="mb-0">Phone Call</p>
                 {isPhoneCall && (
                   <div>
                     <p className="text-[#817F80] text-base font-normal">
@@ -326,7 +326,7 @@ function AddSchedule() {
               <img src={Frame} alt="icon" />
             </div>
             <div className="text-base text-[black] font-medium mx-2">
-              <p>{isPeople ? "Invite people" : "People"}</p>
+              <p className="mb-0">{isPeople ? "Invite people" : "People"}</p>
               {isPeople && (
                 <div>
                   <p className="text-[#817F80] text-base font-normal">

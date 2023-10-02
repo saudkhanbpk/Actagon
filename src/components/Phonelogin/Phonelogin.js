@@ -1,6 +1,7 @@
 import React from "react";
 import "react-phone-input-2/lib/style.css"; // Import the library's CSS
 import PhoneInput from "react-phone-input-2";
+import {MdOutlineArrowBackIosNew} from 'react-icons/md'
 import { Link } from "react-router-dom";
 
 function Phonelogin({ step, setStep, handleEmailAuth, email, setEmail }) {
@@ -8,13 +9,20 @@ function Phonelogin({ step, setStep, handleEmailAuth, email, setEmail }) {
     handleEmailAuth();
   }
   return (
+    <>
+        <Link to='/' style={{textDecoration:'none'}}>
+        <h2 className="text-blueButtonColor px-2 py-2 flex items-center font-medium text-base">
+          <MdOutlineArrowBackIosNew />
+          <span className="ml-0">Back</span>
+        </h2>
+      </Link>
     <div className=" min-h-screen flex justify-center  ">
-      <div className=" p-4 rounded-lg w-full max-w-md mt-14 ">
+      <div className=" p-4 rounded-lg w-full max-w-md mt-8 ">
         {/* Heading */}
-        <h2 className="text-center text-[textColorBlack]  font-[20px]  mb-12">
+        <p className="text-center text-lg font-semibold text-[textColorBlack]   mb-12">
           Welcome back <br />
           Enter your Email:
-        </h2>
+        </p>
 
         {/* Phone Input */}
         <div className="mb-4 border-none mt-6">
@@ -46,6 +54,8 @@ function Phonelogin({ step, setStep, handleEmailAuth, email, setEmail }) {
         </div>
       </div>
     </div>
+    </>
+
   );
 }
 

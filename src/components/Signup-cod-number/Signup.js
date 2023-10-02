@@ -9,17 +9,23 @@ function SignupCode({ setStep, step, verifyPhoneOtp, code, setCode }) {
   };
 
   return (
-    <div className="min-h-screen flex justify-center items-center mt-2">
-      <div className="p-4 rounded-lg w-full max-w-md">
 
-        <div className="min-h-screen flex justify-center items-center mt-2">
-          <div className="p-4 rounded-lg w-full max-w-md">
-
+    <>
+    <Link to='/' style={{textDecoration:'none'}}>
+    <h2 className="text-blueButtonColor px-2 py-2 flex items-center font-medium text-base">
+      <MdOutlineArrowBackIosNew />
+      <span className="ml-0">Back</span>
+    </h2>
+  </Link>
+    <div className="min-h-screen flex justify-center ">
+      <div className="p-4 mt-2 rounded-lg w-full max-w-md">
+        <div className="min-h-screen flex justify-center mt-2">
+          <div className=" rounded-lg w-full max-w-md">
             <h2 className="text-center text-base font-medium mb-8">
               Enter the code we just texted You
             </h2>
             <div className="mb-4 border-none">
-              <input
+              {/* <input
                 type="number"
                 value={code}
                 onChange={(e) => setCode(e.target.value)}
@@ -27,6 +33,21 @@ function SignupCode({ setStep, step, verifyPhoneOtp, code, setCode }) {
                 className="w-full h-10 text-center border rounded-lg"
                 placeholder="● ● ● ● ● ●"
                 style={{ color: "#888" }}
+              /> */}
+
+              <input
+                type="number"
+                value={code}
+                onChange={(e) => setCode(e.target.value)}
+                maxLength="6"
+                className="w-full h-10 text-center border rounded-lg"
+                placeholder="● ● ● ● ● ●"
+                style={{
+                  color: "#888",
+                  backgroundColor: "lightgray",
+                  fontSize: "24px",
+                  alignItems: "center",
+                }}
               />
             </div>
             {/* <div className="mb-3 border-none ">
@@ -59,10 +80,12 @@ function SignupCode({ setStep, step, verifyPhoneOtp, code, setCode }) {
             <div className="text-center">
               <p className="text-sm text-[#C5C5C6]">
                 Didn't get it?{" "}
-                <span className="text-blueButtonColor">Tap to Resend</span>
+                <span className="text-blueButtonColor text-sm">
+                  Tap to Resend
+                </span>
               </p>
               <p className="mt-8">
-                <span className="text-[#3478F6] line-height: 1rem font-normal">
+                <span className="text-[#3478F6] line-height: 1rem text-sm">
                   I lost access to my phone number
                 </span>
               </p>
@@ -83,6 +106,7 @@ function SignupCode({ setStep, step, verifyPhoneOtp, code, setCode }) {
         </div>
       </div>
     </div>
+  </>
 
   );
 }

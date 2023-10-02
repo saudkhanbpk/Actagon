@@ -6,15 +6,15 @@ function User({ setStep, step, firstName, setFirstName, lastName, setLastName })
 
     return (
         <>
-            <Link to='/signup-email'>
-                <h2 className="text-blueButtonColor px-5 py-2 flex items-center font-medium text-base">
+            <Link to='/signup-email' style={{textDecoration:'none'}}>
+                <h2 className="text-blueButtonColor px-2 py-2 flex items-center font-medium text-base">
                     <MdOutlineArrowBackIosNew />
-                    <span className="ml-2">Back</span>
+                    <span className="ml-0">Back</span>
                 </h2>
             </Link>
-            <div className="min-h-screen flex justify-center items-center">
+            <div className="min-h-screen flex justify-center mt-6">
                 <div className="p-4 rounded-lg w-full max-w-md">
-                    <h2 className="text-center line-height: 1.25rem font-medium mb-8">
+                    <h2 className="text-center  font-medium mb-10">
                         What’s your full Name?
                     </h2>
 
@@ -36,7 +36,7 @@ function User({ setStep, step, firstName, setFirstName, lastName, setLastName })
                             style={{ color: "#888", background: 'rgba(118,118,128,0.12)', border: 'none' }}
                         />
                     </div>
-                    <div className="mt-14">
+                    <div className="mt-32">
                         {/* <Link to='/yourUserName'> */}
                         <button
                             onClick={() => setStep(step + 1)}

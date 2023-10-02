@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import calender from "../../../assets/calender.png";
 import { Link } from "react-router-dom";
 import { getFriends } from "../../../service/Auth";
+import { useNavigate} from "react-router-dom";
+
 function Request({ user }) {
     const [friends, setFriends] = useState([]);
     const get = () => {
@@ -18,10 +20,13 @@ function Request({ user }) {
     useEffect(() => {
         get();
     }, []);
+
+  const navigate = useNavigate();
+
     return (
         <div className="min-h-screen flex flex-col mt-2 ">
             <div className="px-2 flex items-center">
-                <p className="text-blueButtonColor  flex justify-start text-center text-lg font-semibold leading-5">
+                <p onClick={() => navigate(-1)} className="text-blueButtonColor  flex justify-start text-center text-lg font-semibold leading-5">
                     Cancel
                 </p>
                 <p className="text-textColorBlack w-full mr-12 flex justify-center items-center text-center text-lg font-semibold leading-5">
@@ -29,7 +34,7 @@ function Request({ user }) {
                 </p>
             </div>
             <div
-                className="flex justify-between items-center   mt-5 rounded-xl p-2 !ml-2 !mr-2"
+                className="flex justify-between items-center   mt-3 rounded-xl p-2 !ml-2 !mr-2"
                 style={{ background: "rgba(118, 118, 128, 0.12)" }}
             >
                 <div className="flex gap-1 items-center">
@@ -56,13 +61,14 @@ function Request({ user }) {
                             user: user,
                             friend: friend,
                         }}
+                        style={{ textDecoration: 'none' }}
                     >
-                        <div className="flex gap-5 items-center p-2" key={friend.id}>
+                        <div className="flex gap-3 items-center p-2" key={friend.id}>
                             <div>
                                 <img
                                     src={friend.profile_img}
                                     alt=""
-                                    className="rounded-full   object-cover w-[60px] h-[60px] no-repeat "
+                                    className="rounded-full   object-cover w-[50px] h-[50px] no-repeat "
                                 />
                             </div>
                             <div>

@@ -55,19 +55,19 @@ function Transition() {
 
     return (
         <>
-            <div className='px-4 flex items-center py-2'>
+            <div className='px-2 flex items-center border-b-[1px] py-2 border-[lightgray] '>
                 <Link to='/addCard' style={{ textDecoration: 'none' }}>
-                    <p className="text-blueButtonColor items-center  flex justify-start text-center text-base font-semibold leading-5">
+                    <p className="text-blueButtonColor items-center  flex justify-start mt-1 mb-0 text-center text-base font-semibold leading-5">
                         <MdOutlineArrowBackIosNew />
                         <span className="ml-1">Back</span>
                     </p>
                 </Link>
-                <p className="text-textColorBlack w-full mr-12 flex justify-center items-center text-center text-lg font-semibold leading-5">
+                <p className="text-textColorBlack w-full mr-12 flex justify-center mb-0 items-center text-center text-lg font-semibold leading-5">
                     Wallet
                 </p>
             </div>
-            <hr style={{ width: '300px', height: '5px', background: '#FFFFFF' }} />
-            <div className="max-w-sm px-3 py-2 mx-auto bg-[#F2F2F6] shadow-lg rounded-lg overflow-hidden">
+            {/* <hr style={{ width: '100%', height: '2px', background: '#FFFFFF' }} /> */}
+            <div className="max-w-sm px-3 py-2 mx-auto mt-2 bg-[#F2F2F6] shadow-lg rounded-lg overflow-hidden">
                 <img src={Card} alt="Transition Card Image" className="w-full h-auto" />
                 <div className="flex py-4 gap-1">
                     <button
@@ -100,7 +100,7 @@ function Transition() {
                 <div className="overflow-y-auto max-h-96" style={{ borderRadius: '12px 12px 0px 0px' }}>
                     {cards.map((items, index) => {
                         return (
-                            <div key={index} className="w-full flex px-2 border-b-[1px] border-[lightgray] py-2 items-center  bg-[#FFF]" >
+                            <div key={index} className="w-full flex px-2 border-b-[1px] border-[lightgray] py-3 items-center  bg-[#FFF]" >
                                 <div className="">
                                 <img src={items.img} alt="Image" />
 
@@ -108,10 +108,10 @@ function Transition() {
                                 <div className="w-full pl-2 pr-0">
                                     <div className="flex w-full text-[#8A9099] items-center text-xs justify-between">
                                         <div className="text-textColorBlack mb-0 font-medium text-base">
-                                            <h4 className="mb-0">{items.header}</h4>
+                                            <p className="mb-0">{items.header}</p>
                                         </div>
                                         <div className="flex items-center">
-                                            <h2 className="font-normal text-textColorBlack text-base">
+                                            <h2 className="font-normal text-textColorBlack mb-0 text-base">
                                                 {items.price}
                                             </h2>
                                             <span>

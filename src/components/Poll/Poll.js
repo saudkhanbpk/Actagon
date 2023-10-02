@@ -13,13 +13,13 @@ const Poll = () => {
   return (
     <div className="w-full m-auto">
       <div className="flex justify-between shadow-xl w-full p-3 items-center">
-      <Link to='/group'>
-        <p className="text-blueButtonColor text-center text-lg font-semibold leading-5">
+      <Link to='/group' style={{ textDecoration: 'none' }}>
+        <p className="text-blueButtonColor mb-0 text-center text-lg font-semibold leading-5">
           Cancel
         </p>
 
       </Link>
-        <p className="text-textColorBlack text-center text-lg font-semibold leading-5">
+        <p className="text-textColorBlack text-center mb-0 text-lg font-semibold leading-5">
           New Poll
         </p>
         <div>
@@ -29,11 +29,11 @@ const Poll = () => {
         </div>
       </div>
 
-      <div className="m-3 px-2 shadow-xl rounded-md ">
+      <div className="m-3 px-2 shadow-xl rounded-xl ">
         <p className="font-semibold p-3">Which shoes is best for me?</p>
       </div>
 
-      <div className=" m-3 p-2 bg-white shadow-xl  rounded-lg">
+      <div className=" m-3 bg-white shadow-xl  rounded-xl">
         {options.map((option, index) => (
           <div
             key={index}
@@ -50,7 +50,7 @@ const Poll = () => {
             
           </div> */}
             <span
-              className={`flex items-center text-3xl px-3 pb-5 cursor-pointer text-gray-100 ${
+              className={`flex items-center text-3xl px-3 pb-3 cursor-pointer text-gray-100 ${
                 selectedOption === option
                   ? " text-blueButtonColor"
                   : "text-[#817F80]"
@@ -58,7 +58,7 @@ const Poll = () => {
             >
               ●
             </span>
-            <span className="font-semibold w-full pb-5">{option}</span>
+            <span className="font-semibold w-full pb-2">{option}</span>
           </div>
         ))}
       </div>

@@ -13,18 +13,18 @@ function Signup({ setStep, step, handlePhoneAuth, number, setNumber }) {
 
   return (
     <>
-      <Link to='/'>
-        <h2 className="text-blueButtonColor px-5 py-2 flex items-center font-medium text-base">
+      <Link to='/' style={{textDecoration:'none'}}>
+        <h2 className="text-blueButtonColor px-2 py-2 flex items-center font-medium text-base">
           <MdOutlineArrowBackIosNew />
-          <span className="ml-2">Back</span>
+          <span className="ml-0">Back</span>
         </h2>
       </Link>
 
       <div className="min-h-screen ">
         <div className="p-4 rounded-lg w-full max-w-md">
-          <h2 className="text-center text-2xl font-20 mb-20">
+          <h3 className="text-center text-xl font-20 mb-12">
             Let’s get you signed up!
-          </h2>
+          </h3>
           <div className="mb-20">
             <div className="mb-4 border-none">
               <PhoneInput
@@ -54,7 +54,7 @@ function Signup({ setStep, step, handlePhoneAuth, number, setNumber }) {
                 <span className="text-blueButtonColor">policy.</span>
               </p>
             </div>
-            <div className="mt-6">
+            <div className="mt-16">
               {/* <Link to='/signup-code'> */}
               <button
                 onClick={() => sendOtp()}

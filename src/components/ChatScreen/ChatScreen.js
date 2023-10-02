@@ -221,7 +221,7 @@ const ChatScreen = ({
                 <p className="text-[#817F80] text-sm">friends</p>
               </div>
             </Link>
-            <Link to="/schedules">
+            <Link to="/schedules" style={{ textDecoration: 'none' }}>
               <div className="mx-2 flex items-center justify-center flex-col">
                 <img
                   src={schedule}
