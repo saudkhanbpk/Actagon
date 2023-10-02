@@ -9,19 +9,19 @@ function Profile({ user, setUser }) {
     <div>
 
       <div
-        className="flex justify-between p-2 items-center"
+        className="flex justify-between px-2  py-3 mx-1 items-center"
         style={{ background: "#F2F2F6" }}
       >
         <div>
           <MdArrowBackIos className="text-blueButtonColor text-xl" />
         </div>
         <div className="ml-7">
-          <p className="text-textColorBlack  text-center text-lg font-medium leading-5">
+          <p className="text-textColorBlack my-0 text-center text-lg font-medium leading-5">
             Profile
           </p>
         </div>
         <div>
-          <p className="text-blueButtonColor  text-center text-base font-medium leading-5">
+          <p className="text-blueButtonColor my-0 text-center text-base font-medium leading-5">
             Update
           </p>
         </div>

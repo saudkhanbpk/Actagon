@@ -46,10 +46,10 @@ function ProfileView() {
           mt-16
           "
           >
-            <p className="text-[#fff] text-[22px] font-bold leading-[22px] ">
+            <p className="text-[#fff] text-[22px] font-bold mb-0 ">
               Imran khan
             </p>
-            <p className="text-[#F2F2F6] text-sm font-normal leading-[22px]">
+            <p className="text-[#F2F2F6] text-sm font-normal ">
               @imrankhan44
             </p>
           </div>
@@ -58,22 +58,22 @@ function ProfileView() {
           <div className="flex flex-col bg-viewProfileBoxColor first-letter:
         rounded-xl p-[2px] h-[70px] w-[80px]  justify-center items-center cursor-pointer">
             <img src={voiceCall} alt="" className="flex items-center mx-auto" />
-            <p className="text-blueButtonColor text-sm leading-normal font-semibold mt-1">Call</p>
+            <p className="text-blueButtonColor text-sm leading-normal font-semibold my-1">Call</p>
           </div>
           <div className="flex flex-col bg-viewProfileBoxColor first-letter:
         rounded-xl p-[2px] h-[70px] w-[80px]  justify-center items-center cursor-pointer">
             <img src={videoCall} alt="" className="flex items-center mx-auto" />
-            <p className="text-blueButtonColor text-sm mt-1 leading-normal font-semibold ">Video Call</p>
+            <p className="text-blueButtonColor text-sm my-1 leading-normal font-semibold ">Video Call</p>
           </div>
           <div className="flex flex-col bg-viewProfileBoxColor first-letter:
         rounded-xl p-[2px] h-[70px] w-[80px]  justify-center items-center cursor-pointer">
             <img src={message} alt="" className="flex items-center mx-auto" />
-            <p className="text-blueButtonColor text-sm leading-normal font-semibold mt-1">Message</p>
+            <p className="text-blueButtonColor text-sm leading-normal font-semibold my-1">Message</p>
           </div>
           <div className="flex flex-col bg-viewProfileBoxColor first-letter:
         rounded-xl p-[2px] h-[70px] w-[80px] justify-center items-center cursor-pointer">
             <img src={payment} alt="" className="flex items-center mx-auto" />
-            <p className="text-blueButtonColor text-sm leading-normal font-semibold mt-1">Payment</p>
+            <p className="text-blueButtonColor text-sm leading-normal font-semibold my-1">Payment</p>
           </div>
         </div>
       </div> 

@@ -5,19 +5,19 @@ import { Link } from 'react-router-dom';
 const AddCard = () => {
     return (
         <div className="bg-[#F2F2F6] min-h-screen">
-            <div className="px-4 py-2 flex justify-between">
-                <Link to='/paymentsEmpty'>
+            <div className="px-2 py-2 flex justify-between">
+                <Link to='/paymentsEmpty' style={{ textDecoration: 'none' }}>
                     <h2 className="text-blueButtonColor flex items-center font-medium text-base">
                         <MdOutlineArrowBackIosNew />
                         <span className="ml-2">Back</span>
                     </h2>
                 </Link>
                 <h2 className="text-textColorBlack font-medium text-base">Add Card</h2>
-                <Link to='/transition'>
+                <Link to='/transition' style={{ textDecoration: 'none' }}>
                     <h2 className="text-blueButtonColor font-medium text-base">Add</h2>
                 </Link>
             </div>
-            <div className="px-4 py-10 text-center">
+            <div className="px-4 py-6 text-center">
                 <h2 className="text-textColorBlack text-3xl font-medium">Card Details</h2>
             </div>
 

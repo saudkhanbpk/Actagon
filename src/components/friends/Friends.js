@@ -63,34 +63,34 @@ function Friends() {
 
   return (
     <>
-      <div className="min-h-screen flex flex-col mt-2 ">
+      <div className="min-h-screen flex flex-col mt-2 mx-1">
         <p className="text-textColorBlack text-center text-lg font-semibold leading-5">
           Friends
         </p>
         <div
-          className="flex justify-between items-center   mt-5 rounded-xl p-2 !ml-2 !mr-2"
+          className="flex justify-between items-center   mt-2 rounded-xl px-2 mx-2"
           style={{ background: "rgba(118, 118, 128, 0.12)" }}
         >
           <div className="flex gap-1 items-center">
-            <div>
-              <img src={searchIcon} alt="" className="" />
+            <div className="w-6 h-6">
+              <img src={searchIcon} alt="" className="w-10 h-6"/>
             </div>
             <div>
               <input
                 type="text"
                 placeholder="Search"
-                className="flex p-3 w-[243px] h-[37px]    items-center bg-transparent	"
+                className="flex p-3 items-center bg-transparent	"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 style={{ background: "transparent", outline: "none" }}
               />
             </div>
           </div>
-          <div>
+          <div  className="w-6 h-6">
             <img src={mic} alt="" />
           </div>
         </div>
-        <div className="flex  self-start">
+        <div className="flex mt-2 self-start">
           <h5 className="text-textColorBlack text-base font-semibold leading-5 p-2">
             {friends.length} Friends
           </h5>
@@ -98,7 +98,7 @@ function Friends() {
         {filteredFriends?.map((friend) => {
           return (
             <div
-              className="flex gap-5 items-center p-2"
+              className="flex gap-3 items-center px-2 py-1"
               key={friend._id}
               onClick={() => handleNavigate(friend._id)}
             >
@@ -106,7 +106,7 @@ function Friends() {
                 <img
                   src={friend.profile_img}
                   alt=""
-                  className="rounded-full   object-cover w-[60px] h-[60px] no-repeat "
+                  className="rounded-full   object-cover w-[50px] h-[50px] no-repeat "
                 />
               </div>
               <div>

@@ -49,7 +49,7 @@ const GroupChat = () => {
       {/* Gallery */}
 
       {/* Chat conversation */}
-      <div className="bg-white overflow-y-auto rounded-md px-3 py-3 oxs:h-auto  h-[650px] mt-2">
+      <div className="bg-white overflow-y-auto rounded-md px-3 py-3 oxs:h-auto  h-[650px] mt-0">
         <div className="flex justify-center font-[400] mb-5">
           <div>
             <BsFillLockFill style={{ fontSize: "15px", color: "gray" }} />
@@ -65,20 +65,20 @@ const GroupChat = () => {
             <img src={Rectangle} alt="heloo" className="h-8 w-8" />
           </div>
           <div className="font-sans rounded-full min-w-fit-content bg-[lightgray] p-2">
-            <p className="text-[#000] text-sm">how are you</p>
+            <p className="text-[#000] items-center mb-0 text-sm">how are you</p>
           </div>
         </div>
 
         <div className="flex">
           <div style={{ width: "40px", height: "27px" }}></div>
           <div className="font-sans flex rounded-full min-w-fit-content ml-auto bg-[#5540FF] p-2">
-            <p className="text-[#FFFFFF]  text-sm">I am good</p>
+            <p className="text-[#FFFFFF] items-center mb-0 text-sm">I am good</p>
           </div>
         </div>
         <div className="flex space-y-1">
           <div style={{ width: "40px", height: "27px" }}></div>
           <div className="font-sans flex rounded-full min-w-fit-content ml-auto bg-[#5540FF] p-2">
-            <p className="text-[#FFFFFF]  text-sm">How are you?</p>
+            <p className="text-[#FFFFFF] items-center mb-0 text-sm">How are you?</p>
           </div>
         </div>
 
@@ -87,14 +87,14 @@ const GroupChat = () => {
             <img src={Rectangle} alt="heloo" className="h-8 w-8" />
           </div>
           <div className="font-sans rounded-full min-w-fit-content bg-[lightgray] p-2">
-            <p className="text-[#000] text-sm">Thank you</p>
+            <p className="text-[#000] items-center mb-0 text-sm">Thank you</p>
           </div>
         </div>
 
         <div className="flex">
           <div style={{ width: "40px", height: "27px" }}></div>
           <div className="font-sans flex rounded-full min-w-fit-content ml-auto bg-[#5540FF] p-2">
-            <p className="text-[#FFFFFF]  text-sm">Welcome</p>
+            <p className="text-[#FFFFFF] items-center mb-0 text-sm">Welcome</p>
           </div>
         </div>
         <div className="flex text-[gray] justify-center items-center font-[14px] mt-4 text-sm ">
@@ -138,7 +138,7 @@ const GroupChat = () => {
       {!showGallery && (
         <div className="bg-white h-[50%] justify-center border-top rounded-xl bg-[lightgray] p-2">
           <div className="flex mt-4 w-full justify-between ">
-            <Link to='/paymentsEmpty'>
+            <Link to='/paymentsEmpty' style={{ textDecoration: 'none' }}>
               <div className="mx-2 flex items-center justify-center flex-col">
                 <img src={dollar} alt="Send Icon" className="w-[60px] h-[60px]" />
                 <p className="text-[#817F80] text-sm">Payment</p>
@@ -149,14 +149,14 @@ const GroupChat = () => {
               <img src={search} alt="Send Icon" className="w-[60px] h-[60px]" />
               <p className="text-[#817F80] text-sm">Search</p>
             </div>
-            <Link to='/poll'>
+            <Link to='/poll' style={{ textDecoration: 'none' }}>
               <div className="mx-2 flex items-center justify-center flex-col">
                 <img src={poll} alt="Send Icon" className="w-[60px] h-[60px]" />
                 <p className="text-[#817F80] text-sm">Poll</p>
 
               </div>
             </Link>
-            <Link to='/location'>
+            <Link to='/location' style={{ textDecoration: 'none' }}>
               <div className="mx-2 flex items-center justify-center flex-col">
                 <img
                   src={location}
@@ -183,7 +183,7 @@ const GroupChat = () => {
               <p className="text-[#817F80] text-sm">friends</p>
             </div>
 
-            <Link to='/emptyschedule'>
+            <Link to='/emptyschedule' style={{ textDecoration: 'none' }}>
               <div className="mx-2 flex items-center justify-center flex-col">
                 <img
                   src={schedule}
