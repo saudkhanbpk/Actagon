@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 import fav from "./../../assets/fav.png";
 import carousel from "./../../assets/cars1.png";
@@ -22,8 +22,9 @@ import { FaInfo, FaInfoCircle } from "react-icons/fa";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import StarRatings from "react-star-ratings";
-
+import { saveData } from "../../service/Auth";
 function SearchResturentDetails() {
+    const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")));
     const location = useLocation();
     const getImages = (photoReference) => {
         const apiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
@@ -63,6 +64,24 @@ function SearchResturentDetails() {
             />
         );
     };
+
+    const postSaved = () => {
+        saveData({
+            userId: user?._id,
+            photos: state.photos,
+            name: state.name,
+            rating: state.rating,
+            totalRating: state.user_ratings_total,
+            phoneNumber: state.international_phone_number,
+        })
+            .then((res) => {
+                console.log(res);
+                alert("saved");
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    };
     return (
         <>
             <div className="">
@@ -72,7 +91,10 @@ function SearchResturentDetails() {
                             <div className="flex items-center cursor-pointer">
                                 <img src={backButton} alt="back" onClick={() => navigate(-1)} />
                             </div>
-                            <div className="flex items-center cursor-pointer">
+                            <div
+                                onClick={postSaved}
+                                className="flex items-center  cursor-pointer"
+                            >
                                 <img src={fav} alt="setting" />
                             </div>
                         </div>
