@@ -1,12 +1,20 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import OtpInput from "react-otp-input";
+import {MdOutlineArrowBackIosNew} from 'react-icons/md'
 
 const EmailCode = ({ step, setStep, handleemailOtp, otp, setOtp }) => {
   const handleVerify = () => {
     handleemailOtp();
   }
   return (
+    <>
+    <Link to='/' style={{textDecoration:'none'}}>
+    <h2 className="text-blueButtonColor px-2 py-2 flex items-center font-medium text-base">
+      <MdOutlineArrowBackIosNew />
+      <span className="ml-0">Back</span>
+    </h2>
+  </Link>
     <div className="min-h-screen flex justify-center  mt-24">
       <div className="px-4 rounded-lg w-full max-w-md">
         {/* Heading */}
@@ -47,7 +55,7 @@ const EmailCode = ({ step, setStep, handleemailOtp, otp, setOtp }) => {
         </div>
         <div className="text-center">
           <p className="text-sm text-[#C5C5C6]">
-            Didn't get it? <span className='text-blueButtonColor'>Tap to Resend</span>
+            Didn't get it? <span className='text-blueButtonColor cursor-pointer'>Tap to Resend</span>
           </p>
 
         </div>
@@ -66,6 +74,7 @@ const EmailCode = ({ step, setStep, handleemailOtp, otp, setOtp }) => {
         </div>
       </div>
     </div>
+    </>
   )
 }
 

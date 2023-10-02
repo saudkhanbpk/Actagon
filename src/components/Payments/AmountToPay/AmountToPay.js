@@ -42,7 +42,7 @@ const AmountToPay = () => {
   return (
     <div className="bg-white p-4 md:p-8 lg:p-12 xl:p-16">
       <div className="flex justify-between items-center">
-        <Link to="/pay">
+        <Link to="/pay" style={{ textDecoration: 'none' }}>
           <h2 className="text-blueButtonColor flex items-center font-medium text-base">
             <MdOutlineArrowBackIosNew />
             <span className="ml-2">Back</span>

@@ -15,10 +15,10 @@ function YouUserName({ setStep, step, username, setUserName, firstName }) {
 
     return (
         <>
-            <Link to='/user'>
-                <h2 className="text-blueButtonColor px-5 py-2 flex items-center font-medium text-base">
+            <Link to='/user' style={{textDecoration:"none"}}>
+                <h2 className="text-blueButtonColor px-2 py-2 flex items-center font-medium text-base">
                     <MdOutlineArrowBackIosNew />
-                    <span className="ml-2">Back</span>
+                    <span className="ml-0">Back</span>
                 </h2>
             </Link>
             <div className="min-h-screen mt-10">
@@ -34,7 +34,7 @@ function YouUserName({ setStep, step, username, setUserName, firstName }) {
                                 @Sameer21321
                             </h2>
 
-                            <Link to='/changeUserName'>
+                            <Link to='/changeUserName'  style={{textDecoration:"none"}}>
                                 <h2 className="text-center text-blueButtonColor text-base font-medium">
                                     Change your username
                                 </h2>
@@ -42,7 +42,7 @@ function YouUserName({ setStep, step, username, setUserName, firstName }) {
                         </div>
 
                     </div>
-                    <div className="">
+                    {/* <div className="">
                         <Link to='/'>
                             <button
                                 className="w-full bg-blueButtonColor text-[white] font-bold py-2 px-4 rounded-lg focus:outline-none focus:shadow-outline-blue transition duration-300 ease-in-out"
@@ -51,7 +51,7 @@ function YouUserName({ setStep, step, username, setUserName, firstName }) {
                                 Next
                             </button>
                         </Link>
-                    </div>
+                    </div> */}
                 </div>
                 <div className="">
                     {/* <Link to=''> */}

@@ -6,10 +6,10 @@ function SignupEmail({ setStep, step, email, setEmail }) {
 
     return (
         <>
-            <Link to='/signup-code'>
-                <h2 className="text-blueButtonColor px-5 py-2 flex items-center font-medium text-base">
+            <Link to='/signup-code' style={{textDecoration:'none'}}>
+                <h2 className="text-blueButtonColor px-2 py-2 flex items-center font-medium text-base">
                     <MdOutlineArrowBackIosNew />
-                    <span className="ml-2">Back</span>
+                    <span className="ml-0">Back</span>
                 </h2>
             </Link>
             <div className="mt-10 px-2">
@@ -23,7 +23,7 @@ function SignupEmail({ setStep, step, email, setEmail }) {
                         Continue with Google
                     </button>
                 </div>
-                <div className="text-center py-10 text-[#C5C5C6]">OR</div>
+                <div className="text-center py-3 text-[#C5C5C6]">OR</div>
                 <div className=" border-none">
                     <input
                         value={email}
